@@ -94,7 +94,7 @@ AliciumCell = CharonCell.line_graph_cell(name = 'Alicium', resonatorsOnly = Fals
 
 lineKagomeCell = kagomeCell.line_graph_cell(name = 'lineKagome', resonatorsOnly = False) #kagome layout, soemthing effective
 
-print('computing absurd cell')
+print 'computing absurd cell'
 absurdity = 1 #line kaphene
 #absurdity = 2 #Alicium
 #absurdity = 3
@@ -176,13 +176,13 @@ plotLattice = EuclideanLayout(xcells = 1, ycells = 1, modeType = 'FW', resonator
 
 
 
-print('computing band cut')
+print 'computing band cut'
 modeType = 'FW'
 #kx_x, ky_y, cutx = plotCell.compute_band_structure(-2*numpy.pi, 0, 2*numpy.pi, 0, numsteps = 100, modeType = modeType)
 #kx_y, ky_y, cuty = plotCell.compute_band_structure(0, -2.5*numpy.pi, 0, 2.5*numpy.pi, numsteps = 100, modeType = modeType)
 kx_x, ky_y, cutx = plotCell.compute_band_structure(-2*numpy.pi, 0, 2*numpy.pi, 0, numsteps = 25, modeType = modeType)
 kx_y, ky_y, cuty = plotCell.compute_band_structure(0, -2.5*numpy.pi, 0, 2.5*numpy.pi, numsteps = 25, modeType = modeType)
-print('plotting')
+print 'plotting'
 
 
 fig2 = pylab.figure(4)

@@ -142,7 +142,7 @@ source = '7gon_3vertex_ 2.pkl'
 test = PlanarLayout(file_path = source)
 t_elapsed = time.time()- t0
 
-print('load time = ' + str(t_elapsed))
+print 'load time = ' + str(t_elapsed)
 
 
 #find the flat band

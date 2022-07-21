@@ -56,7 +56,7 @@ def make_layout_vid(GenLayout, startInd =0, stopInd = -1, figNum = 8, xsize = 14
         breakPoint = stopInd
         
     if startInd > len(GenLayout.Es):
-        raise ValueError('dont have this many eigenvectors')
+        raise ValueError , 'dont have this many eigenvectors'
         
     
     folder = GenLayout.name + '_' + GenLayout.modeType
@@ -70,12 +70,12 @@ def make_layout_vid(GenLayout, startInd =0, stopInd = -1, figNum = 8, xsize = 14
         os.mkdir(saveDir)
     
     
-    print(folder + '\n')
+    print folder + '\n'
         
     fig = pylab.figure(figNum)
     #######################################################
     for eigNum in range(startInd, len(GenLayout.Es)):
-        print(eigNum)
+        print eigNum
         
         eigAmps = GenLayout.Psis[:,GenLayout.Eorder[eigNum]]
         

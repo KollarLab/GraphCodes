@@ -201,7 +201,7 @@ def generate_layout_Hamiltonian(layout, roundDepth = 3, t = 1, verbose = True, s
         
     if verbose:
         temp = numpy.sum(Hmat)/numVerts
-        print('average degree = ' + str(temp))
+        print 'average degree = ' + str(temp)
         
     return Hmat
 
@@ -221,10 +221,10 @@ def makeMinLayoutPickle_hyperbolic(gon,vertex, maxItter,modeType = 'FW', verbose
         
         if Es[Eorder[flags-1]]< 7.4:
             #all the flag values are present, so an actual eigenvalue is missing
-            print('actual eigenvalue missing')
+            print 'actual eigenvalue missing'
             Es = Es[flags:]
         else:
-            print('all real eigenvalues found')
+            print 'all real eigenvalues found'
             Es = Es[flags-1:]
     else:
         Hmat = generate_layout_Hamiltonian(test, verbose = verbose, sparse = False)
@@ -232,7 +232,7 @@ def makeMinLayoutPickle_hyperbolic(gon,vertex, maxItter,modeType = 'FW', verbose
         Eorder = numpy.argsort(Es)
     
     if verbose:
-        print('max eigenvalue = ' + str(numpy.max(Es)))
+        print 'max eigenvalue = ' + str(numpy.max(Es))
     
     pickleDict = {}
     pickleDict['gon'] = test.gon
@@ -287,10 +287,10 @@ def makeMinLayoutPickle_gen(genLayout, verbose = True, saveFolder = r'/Users/kol
         
         if Es[Eorder[flags-1]]< -7.4:
             #all the flag values are present, so an actual eigenvalue is missing
-            print('actual eigenvalue missing')
+            print 'actual eigenvalue missing'
             Es = Es[flags:]
         else:
-            print('all real eigenvalues found')
+            print 'all real eigenvalues found'
             Es = Es[flags-1:]
     else:
         Hmat = generate_layout_Hamiltonian(genLayout, verbose = verbose, sparse = False)
@@ -298,7 +298,7 @@ def makeMinLayoutPickle_gen(genLayout, verbose = True, saveFolder = r'/Users/kol
         Eorder = numpy.argsort(Es)
     
     if verbose:
-        print('max eigenvalue = ' + str(numpy.max(Es)))
+        print 'max eigenvalue = ' + str(numpy.max(Es))
     
     pickleDict = {}
     pickleDict['name'] = genLayout.name
@@ -335,12 +335,12 @@ def loadMinLayoutPickle(name, verbose = True, saveFolder = r'/Users/kollar2/Docu
     name = pickleDict['name']
     
     if verbose:
-        if 'sparse' in list(pickleDict.keys()):
-            print('sparse = ' + str(pickleDict['sparse']))
+        if 'sparse' in pickleDict.keys():
+            print 'sparse = ' + str(pickleDict['sparse'])
         else:
-            print('sparse = False')
-        print('max eigenvalue = ' + str(numpy.max(Es)))
-        print('min eigenvalue = ' + str(numpy.min(Es))) 
+            print 'sparse = False'
+        print 'max eigenvalue = ' + str(numpy.max(Es))
+        print 'min eigenvalue = ' + str(numpy.min(Es)) 
 
 
     return Es , name, pickleDict
@@ -376,7 +376,7 @@ def make_layoutGraph_vid(GenLayout, startInd =0, stopInd = -1, figNum = 8, xsize
         breakPoint = stopInd
         
     if startInd > GenLayout.coords.shape[0]:
-        raise ValueError('dont have this many eigenvectors')
+        raise ValueError , 'dont have this many eigenvectors'
         
     
     folder = GenLayout.name + '_layoutGraph'
@@ -390,7 +390,7 @@ def make_layoutGraph_vid(GenLayout, startInd =0, stopInd = -1, figNum = 8, xsize
         os.mkdir(saveDir)
     
     
-    print(folder + '\n')
+    print folder + '\n'
     
     ####
     #compute eigenvectors
@@ -403,7 +403,7 @@ def make_layoutGraph_vid(GenLayout, startInd =0, stopInd = -1, figNum = 8, xsize
     fig = pylab.figure(figNum)
     #######################################################
     for eigNum in range(startInd, GenLayout.coords.shape[0]):
-        print(eigNum)
+        print eigNum
         
         eigAmps = Psis[:,Eorder[eigNum]]
         
@@ -698,7 +698,7 @@ else:
 
 
 
-print(name + ': number of sites = ' + str(len(Es)))
+print name + ': number of sites = ' + str(len(Es))
 
 pylab.figure(1)
 pylab.clf()

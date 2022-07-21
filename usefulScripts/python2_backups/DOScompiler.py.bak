@@ -325,11 +325,11 @@ def save_DOS(saveCell, numSurfPoints = 5, res = 0.04, folder = '', split_layout 
     return
 
 if saveLots:
-    print('   ')
-    print('num points 1 = ' + str(alternateSurfPoints1))
-    print('num points 2 = ' + str(alternateSurfPoints2))
-    print('res = ' + str(alternateRes))
-    print('  ')
+    print '   '
+    print 'num points 1 = ' + str(alternateSurfPoints1)
+    print 'num points 2 = ' + str(alternateSurfPoints2)
+    print 'res = ' + str(alternateRes)
+    print '  '
     
     
     

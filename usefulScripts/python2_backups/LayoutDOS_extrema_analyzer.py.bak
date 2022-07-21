@@ -98,12 +98,12 @@ def loadMinLayoutPickle(name, verbose = True, saveFolder = r'/Users/kollar2/Docu
     name = pickleDict['name']
     
     if verbose:
-        if 'sparse' in list(pickleDict.keys()):
-            print('sparse = ' + str(pickleDict['sparse']))
+        if 'sparse' in pickleDict.keys():
+            print 'sparse = ' + str(pickleDict['sparse'])
         else:
-            print('sparse = False')
-        print('max eigenvalue = ' + str(numpy.max(Es)))
-        print('min eigenvalue = ' + str(numpy.min(Es))) 
+            print 'sparse = False'
+        print 'max eigenvalue = ' + str(numpy.max(Es))
+        print 'min eigenvalue = ' + str(numpy.min(Es)) 
 
 
     return Es , name, pickleDict
@@ -356,13 +356,13 @@ fit_out, pcov = curve_fit(lorish_ff, itts, lmax, p0 = init_guess)
 guessedLambdas = lorish_ff(itts, init_guess[0], init_guess[1], init_guess[2], init_guess[3])
 fittedLambdas = lorish_ff(itts, fit_out[0], fit_out[1], fit_out[2], fit_out[3])
 
-print('   ')
-print(baseName + ' upper:') 
-print('theoretical = ' + str(2*numpy.sqrt(2)))
-print('fitted assymptotic = ' + str(fit_out[0]))
-print('fitted width = ' + str(fit_out[1]))
-print('fitted scaling = ' + str(fit_out[2]))
-print('fitted power = ' + str(fit_out[3]))
+print '   '
+print baseName + ' upper:' 
+print 'theoretical = ' + str(2*numpy.sqrt(2))
+print 'fitted assymptotic = ' + str(fit_out[0])
+print 'fitted width = ' + str(fit_out[1])
+print 'fitted scaling = ' + str(fit_out[2])
+print 'fitted power = ' + str(fit_out[3])
 
 
 ###alternate fit function
@@ -404,13 +404,13 @@ fit_out, pcov = curve_fit(lorish_bottom_ff, itts, lmin, p0 = init_guess)
 guessedLambdas = lorish_bottom_ff(itts, init_guess[0], init_guess[1], init_guess[2], init_guess[3])
 fittedLambdas = lorish_bottom_ff(itts, fit_out[0], fit_out[1], fit_out[2], fit_out[3])
 
-print('   ')
-print(baseName + ' lower:') 
-print('theoretical = ' + str(2*numpy.sqrt(2)))
-print('fitted assymptotic = ' + str(fit_out[0]))
-print('fitted width = ' + str(fit_out[1]))
-print('fitted scaling = ' + str(fit_out[2]))
-print('fitted power = ' + str(fit_out[3]))
+print '   '
+print baseName + ' lower:' 
+print 'theoretical = ' + str(2*numpy.sqrt(2))
+print 'fitted assymptotic = ' + str(fit_out[0])
+print 'fitted width = ' + str(fit_out[1])
+print 'fitted scaling = ' + str(fit_out[2])
+print 'fitted power = ' + str(fit_out[3])
 
 ax = pylab.subplot(1,2,2)
 pylab.plot(itts, lmin, 'r.-', label = 'sparse')
@@ -485,12 +485,12 @@ fit_out, pcov = curve_fit(lorish_ff, itts, lmax, p0 = init_guess)
 guessedLambdas = lorish_ff(itts, init_guess[0], init_guess[1], init_guess[2], init_guess[3])
 fittedLambdas = lorish_ff(itts, fit_out[0], fit_out[1], fit_out[2], fit_out[3])
 
-print('   ')
-print(baseName + ' upper:') 
-print('fitted assymptotic = ' + str(fit_out[0]))
-print('fitted width = ' + str(fit_out[1]))
-print('fitted scaling = ' + str(fit_out[2]))
-print('fitted power = ' + str(fit_out[3]))
+print '   '
+print baseName + ' upper:' 
+print 'fitted assymptotic = ' + str(fit_out[0])
+print 'fitted width = ' + str(fit_out[1])
+print 'fitted scaling = ' + str(fit_out[2])
+print 'fitted power = ' + str(fit_out[3])
 
 ax = pylab.subplot(1,2,1)
 pylab.plot(itts, lmax, 'b.-', label = 'sparse')
@@ -517,12 +517,12 @@ fit_out, pcov = curve_fit(lorish_bottom_ff, itts, lmin, p0 = init_guess)
 guessedLambdas = lorish_bottom_ff(itts, init_guess[0], init_guess[1], init_guess[2], init_guess[3])
 fittedLambdas = lorish_bottom_ff(itts, fit_out[0], fit_out[1], fit_out[2], fit_out[3])
 
-print('   ')
-print(baseName + ' lower:') 
-print('fitted assymptotic = ' + str(fit_out[0]))
-print('fitted width = ' + str(fit_out[1]))
-print('fitted scaling = ' + str(fit_out[2]))
-print('fitted power = ' + str(fit_out[3]))
+print '   '
+print baseName + ' lower:' 
+print 'fitted assymptotic = ' + str(fit_out[0])
+print 'fitted width = ' + str(fit_out[1])
+print 'fitted scaling = ' + str(fit_out[2])
+print 'fitted power = ' + str(fit_out[3])
 
 ax = pylab.subplot(1,2,2)
 pylab.plot(itts, lmin, 'r.-', label = 'sparse')
@@ -572,12 +572,12 @@ fit_out, pcov = curve_fit(lorish_ff, itts, lmax, p0 = init_guess)
 guessedLambdas = lorish_ff(itts, init_guess[0], init_guess[1], init_guess[2], init_guess[3])
 fittedLambdas = lorish_ff(itts, fit_out[0], fit_out[1], fit_out[2], fit_out[3])
 
-print('   ')
-print(baseName + ' upper:') 
-print('fitted assymptotic = ' + str(fit_out[0]))
-print('fitted width = ' + str(fit_out[1]))
-print('fitted scaling = ' + str(fit_out[2]))
-print('fitted power = ' + str(fit_out[3]))
+print '   '
+print baseName + ' upper:' 
+print 'fitted assymptotic = ' + str(fit_out[0])
+print 'fitted width = ' + str(fit_out[1])
+print 'fitted scaling = ' + str(fit_out[2])
+print 'fitted power = ' + str(fit_out[3])
 
 ax = pylab.subplot(1,2,1)
 pylab.plot(itts, lmax, 'b.-', label = 'sparse')
@@ -599,12 +599,12 @@ fit_out, pcov = curve_fit(lorish_bottom_ff, itts, lmin, p0 = init_guess)
 guessedLambdas = lorish_bottom_ff(itts, init_guess[0], init_guess[1], init_guess[2], init_guess[3])
 fittedLambdas = lorish_bottom_ff(itts, fit_out[0], fit_out[1], fit_out[2], fit_out[3])
 
-print('   ')
-print(baseName + ' lower:') 
-print('fitted assymptotic = ' + str(fit_out[0]))
-print('fitted width = ' + str(fit_out[1]))
-print('fitted scaling = ' + str(fit_out[2]))
-print('fitted power = ' + str(fit_out[3]))
+print '   '
+print baseName + ' lower:' 
+print 'fitted assymptotic = ' + str(fit_out[0])
+print 'fitted width = ' + str(fit_out[1])
+print 'fitted scaling = ' + str(fit_out[2])
+print 'fitted power = ' + str(fit_out[3])
 
 ax = pylab.subplot(1,2,2)
 pylab.plot(itts, lmin, 'r.-', label = 'sparse')
@@ -679,12 +679,12 @@ if plotVSysSize:
     guessedLambdas = lorish_ff_V(sizes, init_guess[0], init_guess[1], init_guess[2], init_guess[3])
     fittedLambdas = lorish_ff_V(sizes, fit_out[0], fit_out[1], fit_out[2], fit_out[3])
     
-    print('   ')
-    print(baseName + ' v size upper:') 
-    print('fitted assymptotic = ' + str(fit_out[0]))
-    print('fitted width = ' + str(fit_out[1]))
-    print('fitted scaling = ' + str(fit_out[2]))
-    print('fitted power = ' + str(fit_out[3]))
+    print '   '
+    print baseName + ' v size upper:' 
+    print 'fitted assymptotic = ' + str(fit_out[0])
+    print 'fitted width = ' + str(fit_out[1])
+    print 'fitted scaling = ' + str(fit_out[2])
+    print 'fitted power = ' + str(fit_out[3])
     
 
     
@@ -707,12 +707,12 @@ if plotVSysSize:
     guessedLambdas = lorish_bottom_ff_V(sizes, init_guess[0], init_guess[1], init_guess[2], init_guess[3])
     fittedLambdas = lorish_bottom_ff_V(sizes, fit_out[0], fit_out[1], fit_out[2], fit_out[3])
     
-    print('   ')
-    print(baseName + ' v size lower:') 
-    print('fitted assymptotic = ' + str(fit_out[0]))
-    print('fitted width = ' + str(fit_out[1]))
-    print('fitted scaling = ' + str(fit_out[2]))
-    print('fitted power = ' + str(fit_out[3]))
+    print '   '
+    print baseName + ' v size lower:' 
+    print 'fitted assymptotic = ' + str(fit_out[0])
+    print 'fitted width = ' + str(fit_out[1])
+    print 'fitted scaling = ' + str(fit_out[2])
+    print 'fitted power = ' + str(fit_out[3])
     
     ax = pylab.subplot(1,2,2)
     pylab.plot(sizes, lmin, 'r.-', label = 'sparse')

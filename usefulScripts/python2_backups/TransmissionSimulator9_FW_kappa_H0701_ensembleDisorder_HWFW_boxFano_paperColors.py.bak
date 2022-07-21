@@ -93,7 +93,7 @@ elif ModeFamily == 'HW':
 #    transmissionVec2 = 10.**(transmissionVec2_dB/10)
 #    ######
 else:
-    raise ValueError('invalid ModeType')
+    raise ValueError, 'invalid ModeType'
 
 ##############################
 
@@ -748,7 +748,7 @@ test.populate(maxItter = 2)
 
 t_elapsed = time.time()- t0
 
-print('generate time = ' + str(t_elapsed))
+print 'generate time = ' + str(t_elapsed)
 
 
 
@@ -1010,7 +1010,7 @@ for dind in range(0,numSamples):
     
     #selectively detune some sites
     if detuneSites:
-        print('detuning sites')
+        print 'detuning sites'
         detunedIndices = numpy.zeros(len(detunedSites))
         for ind in range(0,len(detunedSites)):
             detunedIndices[ind] = int(test.get_SDindex(detunedSites[ind], 2, az = True))
@@ -1053,7 +1053,7 @@ for dind in range(0,numSamples):
         asymCouplings = numpy.asarray([0,0,0,1])    
         genCouplings = numpy.asarray([midFraction,-numpy.sqrt(midFraction),-numpy.sqrt(midFraction),1])/numpy.sqrt(1 + midFraction)
     else:
-        raise ValueError('needs to be FW or HW ModeFamily')
+        raise ValueError, 'needs to be FW or HW ModeFamily'
         
     
     
@@ -1365,7 +1365,7 @@ for dind in range(0,numSamples):
             pylab.plot(plotFreqs/10**9,generalTrans_disorder_dB, 'firebrick', linewidth=0.5, alpha = 5./numSamples)
     pylab.show()  
     
-    print(dind)
+    print dind
  
 pylab.figure(1)
 ax= pylab.subplot(1,1,1)   

@@ -36,7 +36,7 @@ def interaction_make_vid(source, startInd =0, stopInd = -1, figNum = 8, colorbar
         breakPoint = stopInd
         
     if startInd > len(test.Es):
-        raise ValueError('dont have this many eigenvectors')
+        raise ValueError , 'dont have this many eigenvectors'
         
     
 
@@ -51,7 +51,7 @@ def interaction_make_vid(source, startInd =0, stopInd = -1, figNum = 8, colorbar
         os.mkdir(saveDir)
     
     
-    print(folder + '\n')
+    print folder + '\n'
     
     #find the flat band
     flat_band = numpy.where(test.Es < -1.95*test.t)[0]
@@ -62,7 +62,7 @@ def interaction_make_vid(source, startInd =0, stopInd = -1, figNum = 8, colorbar
 
     #######################################################
     for source_ind in range(startInd, len(test.SDx)):
-        print(source_ind)
+        print source_ind
         
         map_vect = test.V_int_map(source_ind, flat_band)
         

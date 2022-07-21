@@ -98,12 +98,12 @@ def loadMinLayoutPickle(name, verbose = True, saveFolder = r'/Users/kollar2/Docu
     name = pickleDict['name']
     
     if verbose:
-        if 'sparse' in list(pickleDict.keys()):
-            print('sparse = ' + str(pickleDict['sparse']))
+        if 'sparse' in pickleDict.keys():
+            print 'sparse = ' + str(pickleDict['sparse'])
         else:
-            print('sparse = False')
-        print('max eigenvalue = ' + str(numpy.max(Es)))
-        print('min eigenvalue = ' + str(numpy.min(Es))) 
+            print 'sparse = False'
+        print 'max eigenvalue = ' + str(numpy.max(Es))
+        print 'min eigenvalue = ' + str(numpy.min(Es)) 
 
 
     return Es , name, pickleDict
@@ -168,7 +168,7 @@ def generate_layout_Hamiltonian(layout, roundDepth = 3, t = 1, verbose = True, s
         
     if verbose:
         temp = numpy.sum(Hmat)/numVerts
-        print('average degree = ' + str(temp))
+        print 'average degree = ' + str(temp)
         
     return Hmat
 
@@ -260,7 +260,7 @@ def compile_lambda_extrema_OctogonZero(maxItt,  target = 0, numVals = 20, roundD
         if itt > 1:
             base.itter_generate()
             base.generate_semiduals()
-            print(itt)
+            print itt
         
         nameStr = baseName  + '_' + str(itt)
         test = GeneralLayout(resonators = base.get_all_resonators(), resonatorsOnly = True, modeType = 'FW', name = nameStr, roundDepth = roundDepth)
@@ -335,7 +335,7 @@ def compile_lambda_target_sigma(maxItt, gon = 7, target = 1.51, numVals = 20, ro
         if itt > 1:
             base.itter_generate()
             base.generate_semiduals()
-            print(itt)
+            print itt
         
         nameStr = baseName  + '_' + str(itt)
         test = GeneralLayout(resonators = base.get_all_resonators(), resonatorsOnly = True, modeType = 'FW', name = nameStr, roundDepth = roundDepth)
@@ -416,7 +416,7 @@ def compile_lambda_extrema(maxItt, gon = 7, tree = False, degree = 3, roundDepth
             itt = itts[ind]
             base = TreeResonators(degree = degree, iterations = itt)
             baseName = '3tree'
-            print(itt)
+            print itt
             
             nameStr = baseName  + '_' + str(itt)
             test = GeneralLayout(resonators = base.get_all_resonators(), resonatorsOnly = True, modeType = 'FW', name = nameStr, roundDepth = roundDepth)
@@ -449,7 +449,7 @@ def compile_lambda_extrema(maxItt, gon = 7, tree = False, degree = 3, roundDepth
             if itt > 1:
                 base.itter_generate()
                 base.generate_semiduals()
-                print(itt)
+                print itt
             
             nameStr = baseName  + '_' + str(itt)
             test = GeneralLayout(resonators = base.get_all_resonators(), resonatorsOnly = True, modeType = 'FW', name = nameStr, roundDepth = roundDepth)
@@ -491,7 +491,7 @@ def compile_lambda_extrema(maxItt, gon = 7, tree = False, degree = 3, roundDepth
         save_path = os.path.join(saveFolder, saveName)
         pickle.dump(pickleDict, open(save_path, 'wb'))
     
-    print(save_path)
+    print save_path
     
     fig1 = pylab.figure(1)
     pylab.clf()
@@ -547,7 +547,7 @@ if not manualTesting:
     folder = '/Users/kollar2/Documents/HouckLab/HyperbolicPlanning/layoutDOSs'
     lambdaMax_vals, lambdaMin_vals, itts = compile_lambda_extrema(maxSize , gon = 7, tree = False, degree = 3, roundDepth = 6, save =True, saveFolder = folder, secondEnergy = True)
     t1 = time.time()
-    print('heptagon elapsed time = ' + str(t1-t0))
+    print 'heptagon elapsed time = ' + str(t1-t0)
     t0 = t1
     
     maxSize = 9
@@ -555,7 +555,7 @@ if not manualTesting:
     folder = '/Users/kollar2/Documents/HouckLab/HyperbolicPlanning/layoutDOSs'
     lambdaMax_vals, lambdaMin_vals, itts = compile_lambda_extrema(maxSize , gon = 7, tree = False, degree = 3, roundDepth = 6, save =True, saveFolder = folder, secondEnergy = True)
     t1 = time.time()
-    print('heptagon elapsed time = ' + str(t1-t0))
+    print 'heptagon elapsed time = ' + str(t1-t0)
     t0 = t1
     
     maxSize = 10
@@ -563,7 +563,7 @@ if not manualTesting:
     folder = '/Users/kollar2/Documents/HouckLab/HyperbolicPlanning/layoutDOSs'
     lambdaMax_vals, lambdaMin_vals, itts = compile_lambda_extrema(maxSize , gon = 7, tree = False, degree = 3, roundDepth = 6, save =True, saveFolder = folder, secondEnergy = True)
     t1 = time.time()
-    print('heptagon elapsed time = ' + str(t1-t0))
+    print 'heptagon elapsed time = ' + str(t1-t0)
     t0 = t1
     
 #    #octagon kagome
@@ -776,13 +776,13 @@ if manualTesting:
         guessedLambdas = lorish_ff(itts, init_guess[0], init_guess[1], init_guess[2], init_guess[3])
         fittedLambdas = lorish_ff(itts, fit_out[0], fit_out[1], fit_out[2], fit_out[3])
         
-        print('   ')
-        print(baseName + ' upper:') 
-        print('theoretical = ' + str(2*numpy.sqrt(2)))
-        print('fitted assymptotic = ' + str(fit_out[0]))
-        print('fitted width = ' + str(fit_out[1]))
-        print('fitted scaling = ' + str(fit_out[2]))
-        print('fitted power = ' + str(fit_out[3]))
+        print '   '
+        print baseName + ' upper:' 
+        print 'theoretical = ' + str(2*numpy.sqrt(2))
+        print 'fitted assymptotic = ' + str(fit_out[0])
+        print 'fitted width = ' + str(fit_out[1])
+        print 'fitted scaling = ' + str(fit_out[2])
+        print 'fitted power = ' + str(fit_out[3])
         
         
         
@@ -809,13 +809,13 @@ if manualTesting:
         guessedLambdas = lorish_bottom_ff(itts, init_guess[0], init_guess[1], init_guess[2], init_guess[3])
         fittedLambdas = lorish_bottom_ff(itts, fit_out[0], fit_out[1], fit_out[2], fit_out[3])
         
-        print('   ')
-        print(baseName + ' lower:') 
-        print('theoretical = ' + str(2*numpy.sqrt(2)))
-        print('fitted assymptotic = ' + str(fit_out[0]))
-        print('fitted width = ' + str(fit_out[1]))
-        print('fitted scaling = ' + str(fit_out[2]))
-        print('fitted power = ' + str(fit_out[3]))
+        print '   '
+        print baseName + ' lower:' 
+        print 'theoretical = ' + str(2*numpy.sqrt(2))
+        print 'fitted assymptotic = ' + str(fit_out[0])
+        print 'fitted width = ' + str(fit_out[1])
+        print 'fitted scaling = ' + str(fit_out[2])
+        print 'fitted power = ' + str(fit_out[3])
     
         ax = pylab.subplot(1,2,2)
         pylab.plot(itts, lmin, 'r.-', label = 'sparse')
@@ -888,12 +888,12 @@ if manualTesting:
         guessedLambdas = lorish_ff(itts, init_guess[0], init_guess[1], init_guess[2], init_guess[3])
         fittedLambdas = lorish_ff(itts, fit_out[0], fit_out[1], fit_out[2], fit_out[3])
         
-        print('   ')
-        print(baseName + ' upper:') 
-        print('fitted assymptotic = ' + str(fit_out[0]))
-        print('fitted width = ' + str(fit_out[1]))
-        print('fitted scaling = ' + str(fit_out[2]))
-        print('fitted power = ' + str(fit_out[3]))
+        print '   '
+        print baseName + ' upper:' 
+        print 'fitted assymptotic = ' + str(fit_out[0])
+        print 'fitted width = ' + str(fit_out[1])
+        print 'fitted scaling = ' + str(fit_out[2])
+        print 'fitted power = ' + str(fit_out[3])
     
         ax = pylab.subplot(1,2,1)
         pylab.plot(itts, lmax, 'b.-', label = 'sparse')
@@ -920,12 +920,12 @@ if manualTesting:
         guessedLambdas = lorish_bottom_ff(itts, init_guess[0], init_guess[1], init_guess[2], init_guess[3])
         fittedLambdas = lorish_bottom_ff(itts, fit_out[0], fit_out[1], fit_out[2], fit_out[3])
         
-        print('   ')
-        print(baseName + ' lower:') 
-        print('fitted assymptotic = ' + str(fit_out[0]))
-        print('fitted width = ' + str(fit_out[1]))
-        print('fitted scaling = ' + str(fit_out[2]))
-        print('fitted power = ' + str(fit_out[3]))
+        print '   '
+        print baseName + ' lower:' 
+        print 'fitted assymptotic = ' + str(fit_out[0])
+        print 'fitted width = ' + str(fit_out[1])
+        print 'fitted scaling = ' + str(fit_out[2])
+        print 'fitted power = ' + str(fit_out[3])
     
         ax = pylab.subplot(1,2,2)
         pylab.plot(itts, lmin, 'r.-', label = 'sparse')

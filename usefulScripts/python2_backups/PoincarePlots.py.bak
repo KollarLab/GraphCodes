@@ -141,13 +141,13 @@ kagomeArgg = (kagomeVertex1-kagomeVertex2)/(1-kagomeVertex1*numpy.conj(kagomeVer
 latticeConstant = 2*numpy.arctanh(numpy.abs(argg))
 kagomeLatticeConstant = 2*numpy.arctanh(numpy.abs(kagomeArgg))
 
-print(str(nn) + '-gon:, ' + str(vertexNum) + ' vertex:')
-print('lattice constant = ' + str(latticeConstant))
+print str(nn) + '-gon:, ' + str(vertexNum) + ' vertex:'
+print 'lattice constant = ' + str(latticeConstant)
 
-print('')
+print ''
 
-print(str(nn) + '-gon:, ' + str(vertexNum) + ' vertex, medial: ')
-print('meadial lattice constant = ' + str(kagomeLatticeConstant))
+print str(nn) + '-gon:, ' + str(vertexNum) + ' vertex, medial: '
+print 'meadial lattice constant = ' + str(kagomeLatticeConstant)
 
 
 #####
@@ -158,10 +158,10 @@ phi = numpy.arccosh(numpy.cos(numpy.pi/nn)/numpy.sin(numpy.pi/vertexNum))
 chi = numpy.arccosh((1/numpy.tan(numpy.pi/nn))*(1/numpy.tan(numpy.pi/vertexNum)))
 psi = numpy.arccosh(numpy.cos(numpy.pi/vertexNum)/numpy.sin(numpy.pi/nn))
 
-print('')
-print(phi*2)
-print(chi)
-print(psi)
+print ''
+print phi*2
+print chi
+print psi
 
 
 
@@ -342,7 +342,7 @@ def draw_tiling(corners, kagomeCorners, axis, kagomeAxis, numItt = 1, kagomeColo
         t1 = time.time()
         itterate_gons(corners, kagomeCorners, axis, kagomeAxis, numItt , kagomeColor, color, linewidth)
         t_el = time.time()-t1
-        print('calculaton time = ' + str(t_el))
+        print 'calculaton time = ' + str(t_el)
         return
     else:
         lines = store_gon(corners)
@@ -352,9 +352,9 @@ def draw_tiling(corners, kagomeCorners, axis, kagomeAxis, numItt = 1, kagomeColo
             t1 = time.time()
             [lines, kagomeLines] = itterate_and_store_gons(corners, kagomeCorners,lines, kagomeLines, numItt, method = 'notseperated')
             t_el = time.time()-t1
-            print('calculaton time = ' + str(t_el))
+            print 'calculaton time = ' + str(t_el)
             
-            print('plotting...')
+            print 'plotting...'
             startdex = 0
             while startdex< len(lines):
                 segment = lines[startdex:startdex+numEdgePoints]
@@ -371,9 +371,9 @@ def draw_tiling(corners, kagomeCorners, axis, kagomeAxis, numItt = 1, kagomeColo
             t1 = time.time()
             [lines, kagomeLines] = itterate_and_store_gons(corners, kagomeCorners,lines, kagomeLines, numItt, method = 'NaNseparated')
             t_el = time.time()-t1
-            print('calculaton time = ' + str(t_el))
+            print 'calculaton time = ' + str(t_el)
             
-            print('plotting...')
+            print 'plotting...'
             axis.plot(numpy.real(lines), numpy.imag(lines), color, linewidth = linewidth)
             kagomeAxis.plot(numpy.real(kagomeLines), numpy.imag(kagomeLines), kagomeColor, linewidth = linewidth)
             return [lines, kagomeLines]
@@ -571,4 +571,4 @@ savePath = r'/Users/kollar2/Documents/HouckLab/HyperbolicPlanning/PoincarePlots/
 #doodle
 RR = 1/kagomeLatticeConstant
 KK = -1/RR**2
-print('Gaussian Curvature = ' + str(KK))
+print 'Gaussian Curvature = ' + str(KK)
