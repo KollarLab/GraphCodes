@@ -58,31 +58,8 @@ from flint import nmod_mat
 #transpose
 #table
 
-
-KollarLabClassPath = r'/Users/kollar2/Documents/KollarLab/MainClasses/GraphCodes'
-if not KollarLabClassPath in sys.path:
-    sys.path.append(KollarLabClassPath)
-
-    
-from CDSconfig import CDSconfig
-
-
-   
-from GeneralLayoutGenerator import GeneralLayout
-from GeneralLayoutGenerator import TreeResonators
-
-from EuclideanLayoutGenerator2 import UnitCell
-from EuclideanLayoutGenerator2 import EuclideanLayout
-
-from LayoutGenerator5 import PlanarLayout
-
-
-from GeneralLayoutGenerator import split_resonators
-from GeneralLayoutGenerator import rotate_resonators
-from GeneralLayoutGenerator import generate_line_graph
-from GeneralLayoutGenerator import shift_resonators
-
-
+from GraphCodes.EuclideanLayoutGenerator2 import UnitCell
+from GraphCodes.EuclideanLayoutGenerator2 import EuclideanLayout
 
 #############
 #color defaults

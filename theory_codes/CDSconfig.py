@@ -24,43 +24,25 @@ import pickle
 import sys
 import os.path
 import matplotlib.gridspec as gridspec
-
-KollarLabClassPath = r'/Users/kollar2/Documents/KollarLab/MainClasses/'
-if not KollarLabClassPath in sys.path:
-    sys.path.append(KollarLabClassPath)
-
-#hyperbolicFolderPath = r'/Users/kollar2/Documents/HouckLab/HyperbolicPlanning/'
-#euclideanFolderPath = r'/Users/kollar2/Documents/HouckLab/EuclideanLatticePlanning/'
-#generalFolderPath = r'/Users/kollar2/Documents/HouckLab/GeneralLayoutCode/'
-#if not hyperbolicFolderPath in sys.path:
-#    sys.path.append(hyperbolicFolderPath)
-#if not euclideanFolderPath in sys.path:
-#    sys.path.append(euclideanFolderPath)
-#if not generalFolderPath in sys.path:
-#    sys.path.append(generalFolderPath)
-    
     
 #FunctionFolderPath = r'/home/pranav/PhotonicLattices'
 DataPickleFolderPath = r'/volumes/ourphoton/Alicia/Layouts/HyperbolicPickles'
 #if not FunctionFolderPath in sys.path:
 #    sys.path.append(FunctionFolderPath)
    
-from GeneralLayoutGenerator import GeneralLayout
-from GeneralLayoutGenerator import TreeResonators
+from GraphCodes.GeneralLayoutGenerator import GeneralLayout
+from GraphCodes.TreeResonators import TreeResonators
 
-from EuclideanLayoutGenerator2 import UnitCell
-from EuclideanLayoutGenerator2 import EuclideanLayout
+from GraphCodes.UnitCell import UnitCell
+from GraphCodes.EuclideanLayoutGenerator2 import EuclideanLayout
 
-from LayoutGenerator5 import PlanarLayout
-
-
-from GeneralLayoutGenerator import split_resonators
-from GeneralLayoutGenerator import rotate_resonators
-from GeneralLayoutGenerator import generate_line_graph
-from GeneralLayoutGenerator import shift_resonators
-#from GeneralLayoutGenerator import decorate_layout
+from GraphCodes.LayoutGenerator5 import PlanarLayout
 
 
+from GraphCodes.resonator_utility import split_resonators
+from GraphCodes.resonator_utility import rotate_resonators
+from GraphCodes.resonator_utility import generate_line_graph
+from GraphCodes.resonator_utility import shift_resonators
 
 
 #%% defaults

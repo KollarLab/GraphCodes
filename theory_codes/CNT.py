@@ -28,19 +28,19 @@ if not KollarLabClassPath in sys.path:
 
 
    
-from GeneralLayoutGenerator import GeneralLayout
-from GeneralLayoutGenerator import TreeResonators
+from GraphCodes.GeneralLayoutGenerator import GeneralLayout
+from GraphCodes.TreeResonators import TreeResonators
 
-from EuclideanLayoutGenerator2 import UnitCell
-from EuclideanLayoutGenerator2 import EuclideanLayout
+from GraphCodes.UnitCell import UnitCell
+from GraphCodes.EuclideanLayoutGenerator2 import EuclideanLayout
 
-from LayoutGenerator5 import PlanarLayout
+from GraphCodes.LayoutGenerator5 import PlanarLayout
 
 
-from GeneralLayoutGenerator import split_resonators
-from GeneralLayoutGenerator import rotate_resonators
-from GeneralLayoutGenerator import generate_line_graph
-from GeneralLayoutGenerator import shift_resonators
+from GraphCodes.resonator_utility import split_resonators
+from GraphCodes.resonator_utility import rotate_resonators
+from GraphCodes.resonator_utility import generate_line_graph
+from GraphCodes.resonator_utility import shift_resonators
 #from GeneralLayoutGenerator import decorate_layout
 
 
