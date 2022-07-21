@@ -6,39 +6,24 @@ Created on Tue Apr  3 16:09:15 2018
 @author: kollar2
 """
 
-import re
 import scipy
 import pylab
 import numpy
-import time
 
-import pickle
-import datetime
-import os
 import sys
 
-import scipy.io as sio
-from scipy import signal
+from GraphCodes.GeneralLayoutGenerator import GeneralLayout
+from GraphCodes.TreeResonators import TreeResonators
 
-from GeneralLayoutGenerator import GeneralLayout
-from TreeResonators import TreeResonators
+from GraphCodes.UnitCell import UnitCell
+from GraphCodes.EuclideanLayoutGenerator2 import EuclideanLayout
 
-hyperbolicFolderPath = r'/Users/kollar2/Documents/HouckLab/HyperbolicPlanning/'
-euclideanFolderPath = r'/Users/kollar2/Documents/HouckLab/EuclideanLatticePlanning/'
-if not hyperbolicFolderPath in sys.path:
-    sys.path.append(hyperbolicFolderPath)
-if not euclideanFolderPath in sys.path:
-    sys.path.append(euclideanFolderPath)
-
-from UnitCell import UnitCell
-from EuclideanLayoutGenerator2 import EuclideanLayout
-
-from LayoutGenerator5 import PlanarLayout
+from GraphCodes.LayoutGenerator5 import PlanarLayout
 
 
-from resonator_utility import split_resonators
-from resonator_utility import generate_line_graph
-from resonator_utility import decorate_layout
+from GraphCodes.resonator_utility import split_resonators
+from GraphCodes.resonator_utility import generate_line_graph
+from GraphCodes.resonator_utility import decorate_layout
 
 
 #######hyperbolic

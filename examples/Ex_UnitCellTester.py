@@ -13,20 +13,10 @@ import numpy
 import os
 import sys
 
-
-pkgDir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
-
-if not pkgDir in sys.path:
-    sys.path.append(pkgDir)
-
-
 from GraphCodes.EuclideanLayoutGenerator2 import EuclideanLayout
 from GraphCodes.UnitCell import UnitCell
 
-#generalFolderPath = r'/Users/kollar2/Documents/HouckLab/GeneralLayoutCode/'
-#if not generalFolderPath in sys.path:
-#    sys.path.append(generalFolderPath)
-    
+from GraphCodes.resonator_utility import decorate_layout 
 from GraphCodes.GeneralLayoutGenerator import *
 
 

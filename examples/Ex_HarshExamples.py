@@ -15,39 +15,17 @@ import sys
 import os.path
 import matplotlib.gridspec as gridspec
 
-#hyperbolicFolderPath = r'/Users/kollar2/Documents/HouckLab/HyperbolicPlanning/'
-#euclideanFolderPath = r'/Users/kollar2/Documents/HouckLab/EuclideanLatticePlanning/'
-#generalFolderPath = r'/Users/kollar2/Documents/HouckLab/GeneralLayoutCode/'
-#if not hyperbolicFolderPath in sys.path:
-#    sys.path.append(hyperbolicFolderPath)
-#if not euclideanFolderPath in sys.path:
-#    sys.path.append(euclideanFolderPath)
-#if not generalFolderPath in sys.path:
-#    sys.path.append(generalFolderPath)
-    
-    
-#FunctionFolderPath = r'/home/pranav/PhotonicLattices'
-#DataPickleFolderPath = r'/volumes/ourphoton/Alicia/Layouts/HyperbolicPickles'
-#if not FunctionFolderPath in sys.path:
-#    sys.path.append(FunctionFolderPath)
-pkgDir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
-
-if not pkgDir in sys.path:
-    sys.path.append(pkgDir)
-
-import context
-
 from GraphCodes.GeneralLayoutGenerator import GeneralLayout     #the most general layout that we have
-from GraphCodes.GeneralLayoutGenerator import TreeResonators     # special case for making trees
+from GraphCodes.TreeResonators import TreeResonators     # special case for making trees
 
-from GraphCodes.EuclideanLayoutGenerator2 import UnitCell    #fundamental domain object
+from GraphCodes.UnitCell import UnitCell    #fundamental domain object
 from GraphCodes.EuclideanLayoutGenerator2 import EuclideanLayout   #normal Euclidean lattices
 
 from GraphCodes.LayoutGenerator5 import PlanarLayout   #original hyperbolic
 
-from GraphCodes.GeneralLayoutGenerator import split_resonators     #functions to modify existing layouts
-from GraphCodes.GeneralLayoutGenerator import generate_line_graph
-from GraphCodes.GeneralLayoutGenerator import decorate_layout
+from GraphCodes.resonator_utility import split_resonators     #functions to modify existing layouts
+from GraphCodes.resonator_utility import generate_line_graph
+from GraphCodes.resonator_utility import decorate_layout
 
 
 

@@ -20,30 +20,17 @@ import sys
 import scipy.io as sio
 from scipy import signal
 
-pkgDir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
-
-if not pkgDir in sys.path:
-    sys.path.append(pkgDir)
-
 from GraphCodes.GeneralLayoutGenerator import GeneralLayout
-from GraphCodes.GeneralLayoutGenerator import TreeResonators
-
-#hyperbolicFolderPath = r'/Users/kollar2/Documents/HouckLab/HyperbolicPlanning/'
-#euclideanFolderPath = r'/Users/kollar2/Documents/HouckLab/EuclideanLatticePlanning/'
-#if not hyperbolicFolderPath in sys.path:
-#    sys.path.append(hyperbolicFolderPath)
-#if not euclideanFolderPath in sys.path:
-#    sys.path.append(euclideanFolderPath)
-
-from GraphCodes.EuclideanLayoutGenerator2 import UnitCell
+from GraphCodes.TreeResonators import TreeResonators
+from GraphCodes.UnitCell import UnitCell
 from GraphCodes.EuclideanLayoutGenerator2 import EuclideanLayout
 
 from GraphCodes.LayoutGenerator5 import PlanarLayout
 
 
-from GraphCodes.GeneralLayoutGenerator import split_resonators
-from GraphCodes.GeneralLayoutGenerator import generate_line_graph
-from GraphCodes.GeneralLayoutGenerator import decorate_layout
+from GraphCodes.resonator_utility import split_resonators
+from GraphCodes.resonator_utility import generate_line_graph
+from GraphCodes.resonator_utility import decorate_layout
 
 
 #######hyperbolic

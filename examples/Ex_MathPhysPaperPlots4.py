@@ -18,42 +18,23 @@ import pickle
 import sys
 import os.path
 import matplotlib.gridspec as gridspec
-
-#hyperbolicFolderPath = r'/Users/kollar2/Documents/HouckLab/HyperbolicPlanning/'
-#euclideanFolderPath = r'/Users/kollar2/Documents/HouckLab/EuclideanLatticePlanning/'
-#generalFolderPath = r'/Users/kollar2/Documents/HouckLab/GeneralLayoutCode/'
-#if not hyperbolicFolderPath in sys.path:
-#    sys.path.append(hyperbolicFolderPath)
-#if not euclideanFolderPath in sys.path:
-#    sys.path.append(euclideanFolderPath)
-#if not generalFolderPath in sys.path:
-#    sys.path.append(generalFolderPath)
-    
+   
     
 #FunctionFolderPath = r'/home/pranav/PhotonicLattices'
 DataPickleFolderPath = r'/volumes/ourphoton/Alicia/Layouts/HyperbolicPickles'
-#if not FunctionFolderPath in sys.path:
-#    sys.path.append(FunctionFolderPath)
 
-pkgDir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
-
-if not pkgDir in sys.path:
-    sys.path.append(pkgDir)
-
-import context
 
 from GraphCodes.GeneralLayoutGenerator import GeneralLayout
-from GraphCodes.GeneralLayoutGenerator import TreeResonators
+from GraphCodes.TreeResonators import TreeResonators
 
-from GraphCodes.EuclideanLayoutGenerator2 import UnitCell
+from GraphCodes.UnitCell import UnitCell
 from GraphCodes.EuclideanLayoutGenerator2 import EuclideanLayout
 
 from GraphCodes.LayoutGenerator5 import PlanarLayout
 
 
-from GraphCodes.GeneralLayoutGenerator import split_resonators
-from GraphCodes.GeneralLayoutGenerator import generate_line_graph
-#from GeneralLayoutGenerator import decorate_layout
+from GraphCodes.resonator_utility import split_resonators
+from GraphCodes.resonator_utility import generate_line_graph
 
 
 #%%
