@@ -35,18 +35,14 @@ that it will get taken care of automatically. It's too much of a mess otherwise.
 @author: kollar2
 """
 
-import re
-import scipy
-import pylab
-import numpy
+import matplotlib.pyplot as plt
+import numpy as np
 import time
 
 import pickle
-import datetime
 import os
 import sys
 
-import scipy.linalg
 from flint import nmod_mat
 #https://fredrikj.net/python-flint/nmod_mat.html
 #conda install -c conda-forge python-flint
@@ -61,27 +57,8 @@ from flint import nmod_mat
 #transpose
 #table
 
-
-KollarLabClassPath = r'/Users/kollar2/Documents/KollarLab/MainClasses/GraphCodes3D'
-if not KollarLabClassPath in sys.path:
-    sys.path.append(KollarLabClassPath)
-
-
-   
-# from GeneralLayoutGenerator import GeneralLayout
-# from GeneralLayoutGenerator import TreeResonators
-
-from EuclideanLayoutGenerator3D import UnitCell3D
-from EuclideanLayoutGenerator3D import EuclideanLayout3D
-
-# from LayoutGenerator5 import PlanarLayout
-
-
-# from GeneralLayoutGenerator import split_resonators
-# from GeneralLayoutGenerator import rotate_resonators
-# from GeneralLayoutGenerator import generate_line_graph
-# from GeneralLayoutGenerator import shift_resonators
-
+from .UnitCell3D import UnitCell3D
+from .EuclideanLayoutGenerator3D import EuclideanLayout3D
 
 
 #############
