@@ -8,7 +8,7 @@ import numpy as np
 import pickle
 import scipy.linalg
 
-from TreeResonators import TreeResonators
+from .TreeResonators import TreeResonators
 
 """
 Created on Wed Jan 17 13:22:52 2018

@@ -6,8 +6,8 @@ import scipy.linalg
 import numpy as np
 import matplotlib.pyplot as plt
 
-from GeneralLayoutGenerator import GeneralLayout
-from UnitCell import UnitCell
+from .GeneralLayoutGenerator import GeneralLayout
+from .UnitCell import UnitCell
 
 """
 Created on Wed Jan 17 13:22:52 2018

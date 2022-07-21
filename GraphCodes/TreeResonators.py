@@ -2,7 +2,7 @@ import pickle
 import scipy
 import numpy as np
 import matplotlib.pyplot as plt
-from resonator_utility import shift_resonators, rotate_resonators
+from .resonator_utility import shift_resonators, rotate_resonators
 
 """
 TreeResonators Class
