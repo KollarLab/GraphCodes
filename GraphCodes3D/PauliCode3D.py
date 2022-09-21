@@ -37,6 +37,7 @@ that it will get taken care of automatically. It's too much of a mess otherwise.
 
 import matplotlib.pyplot as plt
 import numpy as np
+import numpy
 import time
 
 import pickle
