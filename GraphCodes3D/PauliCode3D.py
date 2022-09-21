@@ -39,6 +39,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import numpy
 import time
+import pylab
 
 import pickle
 import os
