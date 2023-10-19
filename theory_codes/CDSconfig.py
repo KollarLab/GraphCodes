@@ -45,6 +45,9 @@ from GraphCodes.resonator_utility import generate_line_graph
 from GraphCodes.resonator_utility import shift_resonators
 
 
+
+
+
 #%% defaults
     
 #############
@@ -554,6 +557,7 @@ class CDSconfig(object):
         DANGEROUS. ONLY BINS BETWEEN HARD CODED LIMITS. DOES NOT ADAPT TO THE CURRENT LATTICE.
         
         probably should move to unit cell class eventually because it is more general, but shoved in here for now.
+        
         '''
     
         
@@ -730,7 +734,7 @@ if __name__=="__main__":
 
 
     #make a default instance
-    CDS = CDSconfig(cellNum, lattice_type = lattice_type)
+    CDS = CDSconfig(cellNum, lattice_type = lattice_type, coverDim = 'xx')
     
     try_lattice(CDS)
     

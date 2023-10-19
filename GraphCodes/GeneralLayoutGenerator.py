@@ -212,7 +212,7 @@ class GeneralLayout(object):
         '''
         save structure to a pickle file
         
-        if name is blank, will use dafualt name
+        if name is blank, will use defualt name
         '''
         if self.modeType == 'HW':
             waveStr = '_HW'
