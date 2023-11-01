@@ -7,7 +7,6 @@ Created on Mon Dec 20 19:27:00 2021
 """
 
 import numpy
-import pylab
 import sys
 import time
 

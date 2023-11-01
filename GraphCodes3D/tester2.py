@@ -21,7 +21,6 @@ if not KollarLabClassPath in sys.path:
 # from GeneralLayoutGenerator import TreeResonators
 
 from EuclideanLayoutGenerator3D import UnitCell3D
-from EuclideanLayoutGenerator3D import EuclideanLayout3D
 
 from PauliCode3D import PauliCode3D
 

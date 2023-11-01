@@ -33,15 +33,12 @@ that it will get taken care of automatically. It's too much of a mess otherwise.
 """
 
 import re
-import scipy
 import pylab
 import numpy
 import time
 
 import pickle
-import datetime
 import os
-import sys
 
 import scipy.linalg
 from flint import nmod_mat

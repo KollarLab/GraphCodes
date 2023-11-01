@@ -35,15 +35,12 @@ that it will get taken care of automatically. It's too much of a mess otherwise.
 @author: kollar2
 """
 
-import matplotlib.pyplot as plt
-import numpy as np
 import numpy
 import time
 import pylab
 
 import pickle
 import os
-import sys
 
 from flint import nmod_mat
 #https://fredrikj.net/python-flint/nmod_mat.html
