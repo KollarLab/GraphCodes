@@ -21,7 +21,7 @@ import sys
 
 #from LayoutGenerator2 import PlanarLayout
 #from LayoutGenerator3 import PlanarLayout
-from LayoutGenerator4 import PlanarLayout
+from GraphCodes.LayoutGenerator5 import PlanarLayout
 
 
 def interaction_make_vid(source, startInd =0, stopInd = -1, figNum = 8, colorbar = True, plot_links = True, autoscale = False):

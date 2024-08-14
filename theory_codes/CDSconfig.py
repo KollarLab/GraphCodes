@@ -91,6 +91,12 @@ stateEdgeWidth2 = 1
 
 
 class CDSconfig(object):
+    '''
+    CDSconfig _summary_
+
+    :param object: _description_
+    :type object: _type_
+    '''    
     def __init__(self, cellNum,  coverLinks = '', coverPolarity = '', coverDim = '2d', lattice_type= 'square', mag = 2.5, baseTheta = 0):
         '''start from a number in the table is CKS book and make a basic unit cell, then cover it 
         in 2D.'''
@@ -353,6 +359,16 @@ class CDSconfig(object):
         self.update_cover(self.coverLinks, self.coverPolarity, self.coverDim)
     
     def update_cover(self, coverLinks, coverPolarity, coverDim = '2d'):
+        '''
+        update_cover _summary_
+
+        :param coverLinks: _description_
+        :type coverLinks: _type_
+        :param coverPolarity: _description_
+        :type coverPolarity: _type_
+        :param coverDim: _description_, defaults to '2d'
+        :type coverDim: str, optional
+        '''        
         self.coverLinks = coverLinks
         self.coverPolarity = coverPolarity
         self.coverDim = coverDim

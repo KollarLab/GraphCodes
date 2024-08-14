@@ -32,22 +32,34 @@ if not euclideanFolderPath in sys.path:
 if not generalFolderPath in sys.path:
     sys.path.append(generalFolderPath)
 
-from EuclideanLayoutGenerator2 import UnitCell
-from EuclideanLayoutGenerator2 import EuclideanLayout
+from GraphCodes.EuclideanLayoutGenerator2 import UnitCell
+from GraphCodes.EuclideanLayoutGenerator2 import EuclideanLayout
 
-from LayoutGenerator5 import PlanarLayout
+from GraphCodes.LayoutGenerator5 import PlanarLayout
 
 
-from GeneralLayoutGenerator import GeneralLayout
-from GeneralLayoutGenerator import TreeResonators
+from GraphCodes.GeneralLayoutGenerator import GeneralLayout
+from GraphCodes.GeneralLayoutGenerator import TreeResonators
 
-from GeneralLayoutGenerator import split_resonators
-from GeneralLayoutGenerator import generate_line_graph
-from GeneralLayoutGenerator import decorate_layout
+from GraphCodes.resonator_utility import split_resonators
+from GraphCodes.resonator_utility import generate_line_graph
+from GraphCodes.resonator_utility import decorate_layout
 
 
 
 def makeMinPickle(gon,vertex,modeType, maxItter):
+    '''
+    makeMinPickle _summary_
+
+    :param gon: _description_
+    :type gon: _type_
+    :param vertex: _description_
+    :type vertex: _type_
+    :param modeType: _description_
+    :type modeType: _type_
+    :param maxItter: _description_
+    :type maxItter: _type_
+    '''    
     test = PlanarLayout(gon = gon, vertex = vertex, side =1, radius_method = 'lin', modeType = modeType)
     test.populate(maxItter = maxItter)
     

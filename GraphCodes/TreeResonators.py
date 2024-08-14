@@ -48,7 +48,33 @@ TreeResonators Class
 
     
 class TreeResonators(object):
+    '''
+    TreeResonators _summary_
+
+    :param object: _description_
+    :type object: _type_
+    '''    
     def __init__(self, isRegular = True, degree = 3, iterations = 3, side = 1, file_path = '', modeType = 'FW', cell = '', roundDepth = 3):
+        '''
+        __init__ _summary_
+
+        :param isRegular: _description_, defaults to True
+        :type isRegular: bool, optional
+        :param degree: _description_, defaults to 3
+        :type degree: int, optional
+        :param iterations: _description_, defaults to 3
+        :type iterations: int, optional
+        :param side: _description_, defaults to 1
+        :type side: int, optional
+        :param file_path: _description_, defaults to ''
+        :type file_path: str, optional
+        :param modeType: _description_, defaults to 'FW'
+        :type modeType: str, optional
+        :param cell: _description_, defaults to ''
+        :type cell: str, optional
+        :param roundDepth: _description_, defaults to 3
+        :type roundDepth: int, optional
+        '''        
         if file_path != '':
             self.load(file_path)
         else:

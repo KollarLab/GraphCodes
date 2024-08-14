@@ -85,6 +85,12 @@ stateEdgeWidth2 = 1
 
 
 class CNT(object):
+    '''
+    CNT _summary_
+
+    :param object: _description_
+    :type object: _type_
+    '''    
     def __init__(self, n,m, InitDiagnosticPlots = False):
         '''start from n and m, carve up a graphene flake, and make a unit cell corresponding to a carbon nanotube.
         
@@ -437,6 +443,12 @@ class CNT(object):
     
     #graphene helpers
     def find_D(self):
+        '''
+        find_D _summary_
+
+        :return: _description_
+        :rtype: _type_
+        '''        
         #return numpy.sqrt(n**2 +m**2 + n*m/numpy.pi)  #ERRORRRRRR!!!! was multiplying by pi before
         #####ACTUALLY!!!!!!! there should be NO factor of pi at all!!!!!!!!!!
         

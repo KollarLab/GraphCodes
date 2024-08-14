@@ -110,6 +110,12 @@ labelSize = 18
 
 
 class PauliCode(object):
+    '''
+    PauliCode _summary_
+
+    :param object: _description_
+    :type object: _type_
+    '''    
     def __init__(self, unitcell = UnitCell('kagome'), name = '', 
                  bosonization_type = 'edge',
                  fiducial = True,
@@ -378,6 +384,15 @@ class PauliCode(object):
         return modmat
     
     def convert_string_to_Haah(self,inputThing):
+        '''
+        convert_string_to_Haah _summary_
+
+        :param inputThing: _description_
+        :type inputThing: _type_
+        :raises ValueError: _description_
+        :return: _description_
+        :rtype: _type_
+        '''        
         if type(inputThing) == numpy.ndarray:
             oldMat = inputThing
             numQubits = oldMat.shape[0]
@@ -432,6 +447,15 @@ class PauliCode(object):
             raise ValueError('invalid input type. should be numpy array or dictionary')
     
     def convert_Haah_to_string(self, inputThing):
+        '''
+        convert_Haah_to_string _summary_
+
+        :param inputThing: _description_
+        :type inputThing: _type_
+        :raises ValueError: _description_
+        :return: _description_
+        :rtype: _type_
+        '''        
         if type(inputThing) == numpy.ndarray:
             oldMat = inputThing
             
@@ -1136,7 +1160,9 @@ class PauliCode(object):
 
 
     def make_torus_vertices(self):
-
+        '''
+        make_torus_vertices _summary_
+        '''
         self.torusXs = numpy.zeros(self.numQubits)
         self.torusYs = numpy.zeros(self.numQubits)
                 
@@ -1301,6 +1327,16 @@ class PauliCode(object):
     
     
     def make_fiducial_H(self, check_plot = False):
+        '''
+        make_fiducial_H _summary_
+
+        :param check_plot: _description_, defaults to False
+        :type check_plot: bool, optional
+        :raises ValueError: _description_
+        :raises ValueError: _description_
+        :return: _description_
+        :rtype: _type_
+        '''        
         if len(self.vertex_assignment) > 0:
             #user has specified how the vertices should be colored
             
@@ -1662,7 +1698,18 @@ class PauliCode(object):
 
     
     def check_unit_cell_labels(self, title = '', fignum = 1, figx = 6, figy = 6):
-            
+        '''
+        check_unit_cell_labels _summary_
+
+        :param title: _description_, defaults to ''
+        :type title: str, optional
+        :param fignum: _description_, defaults to 1
+        :type fignum: int, optional
+        :param figx: _description_, defaults to 6
+        :type figx: int, optional
+        :param figy: _description_, defaults to 6
+        :type figy: int, optional
+        '''            
         fig1 = pylab.figure(fignum)
         pylab.clf()
         
@@ -1697,7 +1744,18 @@ class PauliCode(object):
         pylab.show()
         
     def check_vertex_assignment(self, title = '', fignum = 1, figx = 6, figy = 6):
-            
+        '''
+        check_vertex_assignment _summary_
+
+        :param title: _description_, defaults to ''
+        :type title: str, optional
+        :param fignum: _description_, defaults to 1
+        :type fignum: int, optional
+        :param figx: _description_, defaults to 6
+        :type figx: int, optional
+        :param figy: _description_, defaults to 6
+        :type figy: int, optional
+        '''            
         if len(self.vertex_assignment) == 0:
             print('there is no vertex assignment and I cannot check it')
             return
@@ -2142,7 +2200,30 @@ class PauliCode(object):
                    figx = 6,
                    figy = 6,
                    videoTime = 1):
-        
+        '''
+        plot_terms _summary_
+
+        :param pauliDict: _description_
+        :type pauliDict: _type_
+        :param saveExtension: _description_, defaults to '_blah'
+        :type saveExtension: str, optional
+        :param videoMode: _description_, defaults to False
+        :type videoMode: bool, optional
+        :param inlineMode: _description_, defaults to False
+        :type inlineMode: bool, optional
+        :param fignum: _description_, defaults to 4
+        :type fignum: int, optional
+        :param jog: _description_, defaults to 2.25
+        :type jog: float, optional
+        :param jogy: _description_, defaults to 2.25
+        :type jogy: float, optional
+        :param figx: _description_, defaults to 6
+        :type figx: int, optional
+        :param figy: _description_, defaults to 6
+        :type figy: int, optional
+        :param videoTime: _description_, defaults to 1
+        :type videoTime: int, optional
+        '''        
         baseStr = self.name + saveExtension
         saveDir = os.path.join('codeAutoPlots', baseStr)
         

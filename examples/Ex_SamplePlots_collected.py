@@ -23,6 +23,24 @@ if not pkgDir in sys.path:
     sys.path.append(pkgDir)
 
 def single_site(xgrid, ygrid, x0, y0, sigma, amp):
+    '''
+    single_site _summary_
+
+    :param xgrid: _description_
+    :type xgrid: _type_
+    :param ygrid: _description_
+    :type ygrid: _type_
+    :param x0: _description_
+    :type x0: _type_
+    :param y0: _description_
+    :type y0: _type_
+    :param sigma: _description_
+    :type sigma: _type_
+    :param amp: _description_
+    :type amp: _type_
+    :return: _description_
+    :rtype: _type_
+    '''    
     vals = -amp*numpy.exp(-((xgrid-x0)**2 + (ygrid-y0)**2)/sigma**2 )
     return vals
 
@@ -109,6 +127,16 @@ for indn in range(0, numSites):
 
 
 def drawgraph(axis, mode = 'regular', linecolor = 'k'):
+    '''
+    drawgraph _summary_
+
+    :param axis: _description_
+    :type axis: _type_
+    :param mode: _description_, defaults to 'regular'
+    :type mode: str, optional
+    :param linecolor: _description_, defaults to 'k'
+    :type linecolor: str, optional
+    '''    
     if mode == 'regular':
         gridx = siteGridX
         gridy = siteGridY
@@ -416,6 +444,15 @@ pylab.show()
 #    return state
 
 def build_double_plaquette_state(layout, maxItter = -1):
+    '''
+    build_double_plaquette_state _summary_
+
+    :param layout: _description_
+    :type layout: _type_
+    :param maxItter: _description_, defaults to -1
+    :type maxItter: int, optional
+    :raises ValueError: _description_
+    '''    
     if maxItter > layout.itter:
             raise ValueError('dont have this many itterations')
     elif maxItter <0:

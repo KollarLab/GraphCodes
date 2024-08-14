@@ -20,12 +20,15 @@ if not KollarLabClassPath in sys.path:
 # from GeneralLayoutGenerator import GeneralLayout
 # from GeneralLayoutGenerator import TreeResonators
 
-from EuclideanLayoutGenerator3D import UnitCell3D
+from .EuclideanLayoutGenerator3D import UnitCell3D
 
-from PauliCode3D import PauliCode3D
+from .PauliCode3D import PauliCode3D
 
 
 cubeCell = UnitCell3D('cubic')
+
+from .resonator_utility3D import shift_resonators
+from .resonator_utility3D import draw_resonators
 
 
 
@@ -95,9 +98,11 @@ code3D.check_unit_cell_labels()
 ############
 #manually make a fiducial Hamiltonian
 
-from GeneralLayoutGenerator3D import shift_resonators
-from GeneralLayoutGenerator3D import rotate_resonators
-from GeneralLayoutGenerator3D import draw_resonators
+#Ruthie Commented out the next three imports because those functions don't exist
+
+#from .GeneralLayoutGenerator3D import shift_resonators
+#from .GeneralLayoutGenerator3D import rotate_resonators
+#from .GeneralLayoutGenerator3D import draw_resonators
 
 
 code3D.fiducialH = code3D.make_fiducial_H(check_plot = code3D.verbose)
@@ -126,6 +131,8 @@ for vind in range(0, code3D.verticesPerCell):
         shiftVec = -code3D.unitcell.a2
     else:
         shiftVec = -code3D.unitcell.a3
+    
+
     res1 = shift_resonators(res0, shiftVec[0], shiftVec[1], shiftVec[2])
     draw_resonators(res1, ax, theta = thetas[vind], phi = phis[vind])    
     

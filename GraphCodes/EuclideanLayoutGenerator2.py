@@ -101,6 +101,12 @@ EuclideanLayout Class
 
 
 class EuclideanLayout(GeneralLayout):
+    '''
+    EuclideanLayout _summary_
+
+    :param GeneralLayout: _description_
+    :type GeneralLayout: _type_
+    '''
     def __init__(self, xcells = 4, 
                        ycells = 4, 
                        lattice_type = 'Huse', 

@@ -145,7 +145,23 @@ else:
 
 
 def make_layout_vid(GenLayout, startInd =0, stopInd = -1, figNum = 8, xsize = 14, ysize = 4):
-    
+    '''
+    make_layout_vid _summary_
+
+    :param GenLayout: _description_
+    :type GenLayout: _type_
+    :param startInd: _description_, defaults to 0
+    :type startInd: int, optional
+    :param stopInd: _description_, defaults to -1
+    :type stopInd: int, optional
+    :param figNum: _description_, defaults to 8
+    :type figNum: int, optional
+    :param xsize: _description_, defaults to 14
+    :type xsize: int, optional
+    :param ysize: _description_, defaults to 4
+    :type ysize: int, optional
+    :raises ValueError: _description_
+    '''    
     
     if stopInd <0:
         #set a break point that will not be reached
@@ -1039,6 +1055,22 @@ def itter_generate_interface_tiling(gon2, transition):
 
 
 def draw_arc(ax, resonator, linewidth = 3, color = 'firebrick', numPoints = 100, direction = 1):
+    '''
+    draw_arc _summary_
+
+    :param ax: _description_
+    :type ax: _type_
+    :param resonator: _description_
+    :type resonator: _type_
+    :param linewidth: _description_, defaults to 3
+    :type linewidth: int, optional
+    :param color: _description_, defaults to 'firebrick'
+    :type color: str, optional
+    :param numPoints: _description_, defaults to 100
+    :type numPoints: int, optional
+    :param direction: _description_, defaults to 1
+    :type direction: int, optional
+    '''    
     x1,y1,x2,y2 = resonator
     
     xCenter = (x1+x2)/2
@@ -1062,6 +1094,24 @@ def draw_arc(ax, resonator, linewidth = 3, color = 'firebrick', numPoints = 100,
     return
 
 def draw_variable_arc(ax, resonator, d = 1, linewidth = 3, color = 'firebrick', numPoints = 100, direction = 1):
+    '''
+    draw_variable_arc _summary_
+
+    :param ax: _description_
+    :type ax: _type_
+    :param resonator: _description_
+    :type resonator: _type_
+    :param d: _description_, defaults to 1
+    :type d: int, optional
+    :param linewidth: _description_, defaults to 3
+    :type linewidth: int, optional
+    :param color: _description_, defaults to 'firebrick'
+    :type color: str, optional
+    :param numPoints: _description_, defaults to 100
+    :type numPoints: int, optional
+    :param direction: _description_, defaults to 1
+    :type direction: int, optional
+    '''    
     x1,y1,x2,y2 = resonator
     
     

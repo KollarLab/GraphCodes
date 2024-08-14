@@ -7,10 +7,10 @@ Created on Sun Nov 21 15:00:51 2021
 """
 
 import numpy
+from GraphCodes3D.unit_cell_3D import UnitCell3D
 
-####
+
 #get_coords (basically identification of identical points in 3D)
-###
 
 resonators = numpy.zeros((2,6))
 
@@ -186,6 +186,22 @@ def rotate_coordinates(coords, theta, phi):
 
 roundDepth = 3
 def check_redundnacy(site, svec_all, shift1, shift2, shift3):
+    '''
+    check_redundnacy _summary_
+
+    :param site: _description_
+    :type site: _type_
+    :param svec_all: _description_
+    :type svec_all: _type_
+    :param shift1: _description_
+    :type shift1: _type_
+    :param shift2: _description_
+    :type shift2: _type_
+    :param shift3: _description_
+    :type shift3: _type_
+    :return: _description_
+    :rtype: _type_
+    '''    
     # vec1 = numpy.round(self.a1[0] + 1j*self.a1[1], roundDepth)
     # vec2 = numpy.round(self.a2[0] + 1j*self.a2[1], roundDepth)
     
@@ -236,7 +252,6 @@ check  = site - shiftedCoords
 #auto generation of SD links
 #####
 
-from EuclideanLayoutGenerator3D import UnitCell3D
 cubeCell = UnitCell3D('cubic', a1 = [1,0,0], a2 = [0,1,0], a3 = [0,0,1])
 
 '''
@@ -413,7 +428,7 @@ print('   ')
 ########
 #checking the ordering of SD points versus resonators
 #####
-from EuclideanLayoutGenerator3D import EuclideanLayout3D
+from .EuclideanLayoutGenerator3D import EuclideanLayout3D
 testLattice = EuclideanLayout3D(initialCell = testCell, xcells = 3, ycells = 3, zcells = 3)
 
 for ind in range(0, 10):

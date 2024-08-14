@@ -314,6 +314,18 @@ if plotAllBands:
 #craxy flux lattice analogy
 ######
 def get_FLMat(theta, kx= 0 , ky = 0):
+    '''
+    get_FLMat _summary_
+
+    :param theta: _description_
+    :type theta: _type_
+    :param kx: _description_, defaults to 0
+    :type kx: int, optional
+    :param ky: _description_, defaults to 0
+    :type ky: int, optional
+    :return: _description_
+    :rtype: _type_
+    '''    
     t = -1#flip the sign of the tunnel couplings
     startMat = fluxLatticeCell.generate_Bloch_matrix(kx, ky, modeType = 'FW', t = t)+ (0 +0j)
     

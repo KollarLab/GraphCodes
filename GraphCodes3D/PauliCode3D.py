@@ -56,7 +56,7 @@ from flint import nmod_mat
 #transpose
 #table
 
-from .UnitCell3D import UnitCell3D
+from .unit_cell_3D import UnitCell3D
 from .EuclideanLayoutGenerator3D import EuclideanLayout3D
 
 
@@ -112,6 +112,12 @@ labelSize = 18
 
 
 class PauliCode3D(object):
+    '''
+    PauliCode3D _summary_
+
+    :param object: _description_
+    :type object: _type_
+    '''    
     def __init__(self, unitcell = UnitCell3D('cubic'), name = '', 
                  xSize = 2, ySize = 2, zSize = 2,
                  bosonization_type = 'edge',

@@ -33,12 +33,13 @@ if not hyperbolicFolderPath in sys.path:
 if not euclideanFolderPath in sys.path:
     sys.path.append(euclideanFolderPath)
     
-from GeneralLayoutGenerator import*
+from GraphCodes.GeneralLayoutGenerator import *
+from GraphCodes.resonator_utility import split_resonators
 
-from EuclideanLayoutGenerator2 import EuclideanLayout
-from EuclideanLayoutGenerator2 import UnitCell
+from GraphCodes.EuclideanLayoutGenerator2 import EuclideanLayout
+from GraphCodes.EuclideanLayoutGenerator2 import UnitCell
 
-from LayoutGenerator5 import PlanarLayout
+from GraphCodes.LayoutGenerator5 import PlanarLayout
 
 
 
@@ -47,7 +48,23 @@ from LayoutGenerator5 import PlanarLayout
 
 
 def make_layout_vid(GenLayout, startInd =0, stopInd = -1, figNum = 8, xsize = 14, ysize = 4):
-    
+    '''
+    make_layout_vid _summary_
+
+    :param GenLayout: _description_
+    :type GenLayout: _type_
+    :param startInd: _description_, defaults to 0
+    :type startInd: int, optional
+    :param stopInd: _description_, defaults to -1
+    :type stopInd: int, optional
+    :param figNum: _description_, defaults to 8
+    :type figNum: int, optional
+    :param xsize: _description_, defaults to 14
+    :type xsize: int, optional
+    :param ysize: _description_, defaults to 4
+    :type ysize: int, optional
+    :raises ValueError: _description_
+    '''    
     
     if stopInd <0:
         #set a break point that will not be reached
@@ -126,12 +143,16 @@ def make_layout_vid(GenLayout, startInd =0, stopInd = -1, figNum = 8, xsize = 14
 
 
 #######hyperbolic
-#test1 = PlanarLayout(gon = 10, vertex = 3, side =1, radius_method = 'lin')
-#test1.populate(2, resonatorsOnly=False)
-#resonators = test1.get_all_resonators()
-#testLattice = GeneralLayout(resonators , modeType = test1.modeType, name =  '10gon_3vertex_2')
+test1 = PlanarLayout(gon = 10, vertex = 3, side =1, radius_method = 'lin')
+test1.populate(2, resonatorsOnly=False)
+resonators = test1.get_all_resonators()
+testLattice = GeneralLayout(resonators , modeType = test1.modeType, name =  '10gon_3vertex_2')
 #xsize = 12.7
 #ysize = 6.3
+
+'''
+Ruthie uncommented the four lines above so that sphinx could process the file
+'''
 
 #######hyperbolic, HW
 #test1 = PlanarLayout(gon = 7, vertex = 3, side =1, radius_method = 'lin', modeType = 'HW')
