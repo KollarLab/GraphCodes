@@ -1761,8 +1761,8 @@ class PauliCode3D(object):
         coordMat[:,0] = self.cellXs
         coordMat[:,1] = self.cellYs
         coordMat[:,2] = self.cellZs
-        # plotPoints = self.unitcell.rotate_coordinates(coordMat, theta, phi)
-        plotPoints = self.unitcell.rotate_coordinates(self.unitcell.SDcoords, theta, phi)
+        plotPoints = self.unitcell.rotate_coordinates(coordMat, theta, phi) #changing to plotting Cell Xs, not just root coordinates
+        # plotPoints = self.unitcell.rotate_coordinates(self.unitcell.SDcoords, theta, phi)
         
         shiftVec = numpy.zeros((1,3))
         shiftVec[0,:] = self.unitcell.a3

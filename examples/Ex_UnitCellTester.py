@@ -17,6 +17,7 @@ from GraphCodes.EuclideanLayoutGenerator2 import EuclideanLayout
 from GraphCodes.UnitCell import UnitCell
 
 from GraphCodes.resonator_utility import decorate_layout 
+from GraphCodes.resonator_utility import split_resonators
 from GraphCodes.GeneralLayoutGenerator import *
 
 
@@ -96,23 +97,24 @@ modeType = 'FW'
 #res = res3
 #testCell = UnitCell('extremal_hofmann_attempt', resonators = res3, a1 = cell0.a1, a2 = cell0.a2)
 
-cell0 = UnitCell('kagome')
+# cell0 = UnitCell('kagome')
+# decCell = UnitCell('PeterChain_tail', side = 1)
+# res0 = cell0.resonators
+# res1 = decorate_layout(res0, decCell.resonators)
+# testCell = UnitCell('Peter_graphene', resonators = res1, a1 = cell0.a1, a2 = cell0.a2)
+
+
+# cell0 = UnitCell('Huse')
+# res0 = cell0.resonators
+# res1 = split_resonators(res0)
+# # testCell = cell0
+# testCell = UnitCell('split_HPG', resonators = res1, a1 = cell0.a1, a2 = cell0.a2)
+
+cell0 = UnitCell('Huse')
 decCell = UnitCell('PeterChain_tail', side = 1)
 res0 = cell0.resonators
 res1 = decorate_layout(res0, decCell.resonators)
-testCell = UnitCell('Peter_graphene', resonators = res1, a1 = cell0.a1, a2 = cell0.a2)
-
-
-#cell0 = UnitCell('Huse')
-#res0 = cell0.resonators
-#res1 = split_resonators(res0)
-#testCell = UnitCell('split_HPG', resonators = res1, a1 = cell0.a1, a2 = cell0.a2)
-
-#cell0 = UnitCell('Huse')
-#decCell = UnitCell('PeterChain_tail', side = 1)
-#res0 = cell0.resonators
-#res1 = decorate_layout(res0, decCell.resonators)
-#testCell = UnitCell('Peter_HPG', resonators = res1, a1 = cell0.a1, a2 = cell0.a2)
+testCell = UnitCell('Peter_HPG', resonators = res1, a1 = cell0.a1, a2 = cell0.a2)
 
 
 #cell0 = UnitCell('kagome')

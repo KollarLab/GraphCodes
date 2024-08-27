@@ -547,6 +547,10 @@ class PlanarLayout(object):
 #            MattiasRadii = [1.0, 3.1, 4.8, 7.,8.]
             MattiasRadii = [1.0, 3.2, 5.1, 7.,8.]
             self.radii[newItter ] = self.radius*MattiasRadii[newItter]
+        if self.radius_method == 'custom':
+            print('Warning: All radii must be specified before construction')
+            #no need to update.
+            pass
         
         #store the cartesian locations of the new vertices
         xs = self.radii[newItter]*np.cos(self.points[newItter])
