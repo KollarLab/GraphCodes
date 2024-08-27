@@ -147,6 +147,12 @@ v5 - Added capability to deal with HW resonators properly
 
 
 class PlanarLayout(object):
+    '''
+    PlanarLayout _summary_
+
+    :param object: _description_
+    :type object: _type_
+    '''    
     def __init__(self, gon = 4, vertex = 4,side = 1, radius_method = 'lin', file_path = '', modeType = 'FW'):
         if file_path != '':
             self.load(file_path)

@@ -113,6 +113,12 @@ labelSize = 14
 
 # class PauliCode_GenGraph(object):
 class PauliCode_GenGraph(PauliCode):
+    '''
+    PauliCode_GenGraph _summary_
+
+    :param PauliCode: _description_
+    :type PauliCode: _type_
+    '''    
     def __init__(self, graph, name = '', 
                  bosonization_type = 'edge',
                  fiducial = True,
@@ -1185,6 +1191,14 @@ class PauliCode_GenGraph(PauliCode):
     
     
     def make_fiducial_H(self, check_plot = False):
+        '''
+        make_fiducial_H _summary_
+
+        :param check_plot: _description_, defaults to False
+        :type check_plot: bool, optional
+        :return: _description_
+        :rtype: _type_
+        '''        
         #user has not specificied a coloring for the vertices, so I will do something simple. 
         pauliDict = {}
         pauliDict[(0,0)] = self.blank_pauli_mat(self.numQubits, self.numVertices)

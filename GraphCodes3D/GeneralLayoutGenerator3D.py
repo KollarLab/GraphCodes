@@ -9,81 +9,62 @@ Created on Wed Jan 17 13:22:52 2018
 this class is modified from the 2D version on 11-21-21
 
 Description for the old 2D version
-GeneralLayout Class
+GeneralLayout Class:
+#####################
     input a set of resoantors (the full lattice/tree/etc) and calculate properties
     v0 - self.coords is wierd, and may not contain all the capacitor points
      
      Methods:
-        ###########
-        #automated construction, saving, loading
-        ##########
-        populate (autoruns at creation time)
-        save
-        load
+        *automated construction, saving, loading*
+            * populate (autoruns at creation time)
+            * save
+            * load
         
-        ########
-        #functions to generate the resonator lattice
-        #######
-        NA
-         
-        #######
-        #resonator lattice get /view functions
-        #######
-        get_xs
-        get_ys
-        draw_resonator_lattice
-        draw_resonator_end_points
-        get_all_resonators
-        get_coords
+        *functions to generate the resonator lattice*
+            * NA
         
-        ########
-        #functions to generate effective JC-Hubbard lattice (semiduals)
-        ######## 
-        generate_semiduals
-        generate_vertex_dict
+        *resonator lattice get /view functions*
+            * get_xs
+            * get_ys
+            * draw_resonator_lattice
+            * draw_resonator_end_points
+            * get_all_resonators
+            * get_coords
         
-        #######
-        #get and view functions for the JC-Hubbard (semi-dual lattice)
-        #######
-        draw_SD_points
-        draw_SDlinks
-        get_semidual_points (semi-defunct)
+        *functions to generate effective JC-Hubbard lattice (semiduals)*
+            * generate_semiduals
+            * generate_vertex_dict
         
-        ######
-        #Hamiltonian related methods
-        ######
-        generate_Hamiltonian
-        get_eigs
+        *get and view functions for the JC-Hubbard (semi-dual lattice)*
+            * draw_SD_points
+            * draw_SDlinks
+            * get_semidual_points (semi-defunct)
         
-        ##########
-        #methods for calculating/looking at states and interactions
-        #########
-        get_SDindex (removed for now. Needs to be reimplemented in sensible fashion)
-        build_local_state
-        V_int
-        V_int_map
-        plot_layout_state
-        plot_map_state
-        get_end_state_plot_points
-        plot_end_layout_state
+        *Hamiltonian related methods*
+            * generate_Hamiltonian
+            * get_eigs
         
-        ##########
-        #methods for calculating things about the root graph
-        #########
-        generate_root_Hamiltonian
-        plot_root_state
+        *methods for calculating/looking at states and interactions*
+            * get_SDindex (removed for now. Needs to be reimplemented in sensible fashion)
+            * build_local_state
+            * V_int
+            * V_int_map
+            * plot_layout_state
+            * plot_map_state
+            * get_end_state_plot_points
+            * plot_end_layout_state
+        
+        *methods for calculating things about the root graph*
+            * generate_root_Hamiltonian
+            * plot_root_state
         
         
     Sample syntax:
-        #####
-        #loading precalculated layout
-        #####
+        *loading precalculated layout*
         from GeneralLayoutGenerator import GeneralLayout
         testLattice = GeneralLayout(file_path = 'name.pkl')
         
-        #####
-        #making new layout
-        #####
+        *making new layout*
         from GeneralLayoutGenerator import GeneralLayout
         from EuclideanLayoutGenerator2 import UnitCell
         from LayoutGenerator5 import PlanarLayout
@@ -103,9 +84,7 @@ GeneralLayout Class
         #generate full layout with SD simulation
         testLattice = GeneralLayout(resonators , modeType = 'FW', name =  'NameMe')
         
-        #####
-        #saving computed layout
-        #####
+        *saving computed layout*
         testLattice.save( name = 'filename.pkl') #filename can be a full path, but must have .pkl extension
         
 
@@ -113,20 +92,16 @@ GeneralLayout Class
 
 
 Resonator Processing Functions
-        #######
-        #resonator array processing functions
-        #######
-        split_resonators
-        generate_line_graph
-        max_degree TBD
-        shift_resonators
-        rotate_resonators
-        get_coordsrrrg
+        *resonator array processing functions*
+            * split_resonators
+            * generate_line_graph
+            * max_degree TBD
+            * shift_resonators
+            * rotate_resonators
+            * get_coordsrrrg
         
     Samples syntax:
-        #####
-        #split each resonator in two
-        #####
+        *split each resonator in two*
         from GeneralLayoutGenerator import split_resonators
         splitGraph = split_resonators(resonators)
         
@@ -136,16 +111,11 @@ Resonator Processing Functions
 
 
 
-import re
 import scipy
 import pylab
 import numpy
-import time
 
 import pickle
-import datetime
-import os
-import sys
 
 import scipy.linalg
 
@@ -153,6 +123,12 @@ import scipy.linalg
 
 
 class GeneralLayout3D(object):
+    '''
+    GeneralLayout3D _summary_
+
+    :param object: _description_
+    :type object: _type_
+    '''    
     def __init__(self, resonators = [0,0,0,0], 
                        side = 1, 
                        file_path = '', 

@@ -100,6 +100,12 @@ stateEdgeWidth2 = 1
 
 
 class AbelianCover(CDSconfig):
+    '''
+    AbelianCover _summary_
+
+    :param CDSconfig: _description_
+    :type CDSconfig: _type_
+    '''    
     def __init__(self, baseGraph,  
                  coverLinks = '', 
                  coverPolarity = '', 
@@ -154,6 +160,16 @@ class AbelianCover(CDSconfig):
         
         
     def update_cover(self, coverLinks, coverPolarity, coverDim = '2d'):
+        '''
+        update_cover _summary_
+
+        :param coverLinks: _description_
+        :type coverLinks: _type_
+        :param coverPolarity: _description_
+        :type coverPolarity: _type_
+        :param coverDim: _description_, defaults to '2d'
+        :type coverDim: str, optional
+        '''        
         self.coverLinks = coverLinks
         self.coverPolarity = coverPolarity
         self.coverDim = coverDim
@@ -354,7 +370,18 @@ class AbelianCover(CDSconfig):
 if __name__=="__main__":  
     
     def try_lattice(cover, coverLinks = '', coverPolarity= '', surfRes = 50):
-    
+        '''
+        try_lattice _summary_
+
+        :param cover: _description_
+        :type cover: _type_
+        :param coverLinks: _description_, defaults to ''
+        :type coverLinks: str, optional
+        :param coverPolarity: _description_, defaults to ''
+        :type coverPolarity: str, optional
+        :param surfRes: _description_, defaults to 50
+        :type surfRes: int, optional
+        '''    
         # update the connectivity of the cell
         if coverLinks != '':
             if coverPolarity !='':

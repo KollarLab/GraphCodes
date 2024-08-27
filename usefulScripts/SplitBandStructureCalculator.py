@@ -26,18 +26,18 @@ if not euclideanFolderPath in sys.path:
 if not generalFolderPath in sys.path:
     sys.path.append(generalFolderPath)
 
-from GeneralLayoutGenerator import GeneralLayout
-from GeneralLayoutGenerator import TreeResonators
+from GraphCodes.GeneralLayoutGenerator import GeneralLayout
+from GraphCodes.GeneralLayoutGenerator import TreeResonators
 
-from EuclideanLayoutGenerator2 import UnitCell
-from EuclideanLayoutGenerator2 import EuclideanLayout
+from GraphCodes.EuclideanLayoutGenerator2 import UnitCell
+from GraphCodes.EuclideanLayoutGenerator2 import EuclideanLayout
 
-from LayoutGenerator5 import PlanarLayout
+from GraphCodes.LayoutGenerator5 import PlanarLayout
 
 
-from GeneralLayoutGenerator import split_resonators
-from GeneralLayoutGenerator import generate_line_graph
-from GeneralLayoutGenerator import decorate_layout
+from GraphCodes.resonator_utility import split_resonators
+from GraphCodes.resonator_utility import generate_line_graph
+from GraphCodes.resonator_utility import decorate_layout
 
 #from mpl_toolkits.mplot3d import Axes3D
 #import matplotlib.pyplot as plt
@@ -92,7 +92,16 @@ stateEdgeWidth2 = 1
 
 
 def plot_any_band_cut(ax, cut, connected = True):
-    
+    '''
+    plot_any_band_cut _summary_
+
+    :param ax: _description_
+    :type ax: _type_
+    :param cut: _description_
+    :type cut: _type_
+    :param connected: _description_, defaults to True
+    :type connected: bool, optional
+    '''    
     colorlist = ['firebrick', 'dodgerblue', 'blueviolet', 'mediumblue', 'goldenrod', 'cornflowerblue']
     
     pylab.sca(ax)
@@ -364,6 +373,14 @@ if forceLims:
 
 
 def find_layout_cell(cell):
+    '''
+    find_layout_cell _summary_
+
+    :param cell: _description_
+    :type cell: _type_
+    :return: _description_
+    :rtype: _type_
+    '''    
     #determine the unit cell for the layout. The ends of the resonators is too big a set.
     allCoords = numpy.round(cell.coords[:,:], 3)
     svec_all = allCoords[:,0] + 1j*allCoords[:,1]
@@ -371,6 +388,20 @@ def find_layout_cell(cell):
     
     
     def check_redundnacy(cell, site, svec_all, shift1, shift2):
+        '''
+        check_redundnacy _summary_
+
+        :param cell: _description_
+        :type cell: _type_
+        :param site: _description_
+        :type site: _type_
+        :param svec_all: _description_
+        :type svec_all: _type_
+        :param shift1: _description_
+        :type shift1: _type_
+        :param shift2: _description_
+        :type shift2: _type_
+        '''        
         vec1 = numpy.round(cell.a1[0] + 1j*cell.a1[1], 3)
         vec2 = numpy.round(cell.a2[0] + 1j*cell.a2[1], 3)
         shiftedCoords = svec_all + shift1*(vec1) + shift2*(vec2)
@@ -427,7 +458,22 @@ def find_layout_cell(cell):
    
 
 def generate_layout_Bloch_matrix(cell, kx, ky, modeType = 'FW', t = 1, phase = 0):
-    
+    '''
+    generate_layout_Bloch_matrix _summary_
+
+    :param cell: _description_
+    :type cell: _type_
+    :param kx: _description_
+    :type kx: _type_
+    :param ky: _description_
+    :type ky: _type_
+    :param modeType: _description_, defaults to 'FW'
+    :type modeType: str, optional
+    :param t: _description_, defaults to 1
+    :type t: int, optional
+    :param phase: _description_, defaults to 0
+    :type phase: int, optional
+    '''    
     allCoords = numpy.round(cell.coords[:,:], 3)
     svec_all = allCoords[:,0] + 1j*allCoords[:,1]
     

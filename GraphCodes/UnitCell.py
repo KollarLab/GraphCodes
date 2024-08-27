@@ -80,6 +80,12 @@ UnitCell Class
         
 """
 class UnitCell(object):
+    '''
+    UnitCell _summary_
+
+    :param object: _description_
+    :type object: _type_
+    '''    
     def __init__(self, lattice_type, 
                        side = 1, 
                        resonators = '', 

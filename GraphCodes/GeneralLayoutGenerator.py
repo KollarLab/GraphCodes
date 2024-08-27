@@ -140,6 +140,12 @@ GeneralLayout Class
   
 """
 class GeneralLayout(object):
+    '''
+    GeneralLayout _summary_
+
+    :param object: _description_
+    :type object: _type_
+    '''    
     def __init__(self, resonators = [0,0,0,0], 
                        side = 1, 
                        file_path = '', 
@@ -415,6 +421,9 @@ class GeneralLayout(object):
         return linkMat
     
     def generate_vertex_dict(self):
+        '''
+        generate_vertex_dict _summary_
+        '''        
         plusEnds = np.round(self.resonators[:,0:2],self.roundDepth)
         minusEnds = np.round(self.resonators[:,2:4],self.roundDepth)
         

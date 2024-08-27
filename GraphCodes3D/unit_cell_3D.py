@@ -12,66 +12,62 @@ UnitCell3D Class
         Cubic
     
     Methods:
-        ########
-        #generating the cell
-        ########
-        _generate_cubic_cell
-        _generate_arbitrary_Cell
-        clean_semiduals
+        *generating the cell*
+            * _generate_cubic_cell
+            * _generate_arbitrary_Cell
+            * clean_semiduals
         
-        ########
-        #drawing the cell
-        ########
-        rotate_resonators
-        rotate_coords
-        draw_resonators
-        draw_resonator_end_points
-        draw_sites
-        draw_SDlinks
+        *drawing the cell*
+            * rotate_resonators
+            * rotate_coords
+            * draw_resonators
+            * draw_resonator_end_points
+            * draw_sites
+            * draw_SDlinks
         
-        ########
-        #auto construction functions for SD links
-        ########
-        _auto_generate_SDlinks
-        _auto_generate_cell_SDlinks
+        *auto construction functions for SD links*
+            * _auto_generate_SDlinks
+            * _auto_generate_cell_SDlinks
         
-        ########
-        #Bloch theory function
-        ########
-        generate_Bloch_matrix
-        compute_band_structure
-        plot_band_cut
-        plot_bloch_wave
-        removed: plot_bloch_wave_end_state
+        *Bloch theory function*
+            * generate_Bloch_matrix
+            * compute_band_structure
+            * plot_band_cut
+            * plot_bloch_wave
+            * removed: plot_bloch_wave_end_state
         
-        ########
-        #making new cells
-        ########
-        split_cell
-        line_graph_cell #for now this only works for coordination numbers 3 or smaller
-        #4 and up require more link matrix space to be allocated.
+        *making new cells*
+            * split_cell
+            * line_graph_cell #for now this only works for coordination numbers 3 or smaller
+            #4 and up require more link matrix space to be allocated.
         
-        ##########
-        #methods for calculating things about the root graph
-        #########
-        find_root_cell #determine and store the unit cell of the root graph
-        generate_root_Bloch_matrix #generate a Bloch matrix for the root graph
-        compute_root_band_structure
-        plot_root_bloch_wave
+        *methods for calculating things about the root graph*
+            * find_root_cell #determine and store the unit cell of the root graph
+            * generate_root_Bloch_matrix #generate a Bloch matrix for the root graph
+            * compute_root_band_structure
+            * plot_root_bloch_wave
      
     Sample syntax:
-        #####
-        #creating unit cell
-        #####
+        *creating unit cell*
+        
         from EuclideanLayoutGenerator import UnitCell
-        #built-in cell
+        
+        *built-in cell*
+        
         testCell = UnitCell3D(lattice_type = 'Huse', side = 1)
         
-        #custom cell
+        *custom cell*
+        
         testCell = UnitCell(lattice_type = 'name', side = 1, resonators = resonatorMat, a1 = vec1, a2 = vec2, a3 = vec3)
 '''  
 
 class UnitCell3D(object):
+    '''
+    UnitCell3D _summary_
+
+    :param object: _description_
+    :type object: _type_
+    '''    
     def __init__(self, lattice_type, 
                        side = 1, 
                        resonators = '', 

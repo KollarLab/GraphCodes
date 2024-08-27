@@ -32,17 +32,17 @@ DataPickleFolderPath = r'/volumes/ourphoton/Alicia/Layouts/HyperbolicPickles'
 #if not FunctionFolderPath in sys.path:
 #    sys.path.append(FunctionFolderPath)
    
-from GeneralLayoutGenerator import GeneralLayout
-from GeneralLayoutGenerator import TreeResonators
+from GraphCodes.GeneralLayoutGenerator import GeneralLayout
+from GraphCodes.GeneralLayoutGenerator import TreeResonators
 
-from EuclideanLayoutGenerator2 import UnitCell
-from EuclideanLayoutGenerator2 import EuclideanLayout
+from GraphCodes.EuclideanLayoutGenerator2 import UnitCell
+from GraphCodes.EuclideanLayoutGenerator2 import EuclideanLayout
 
-from LayoutGenerator5 import PlanarLayout
+from GraphCodes.LayoutGenerator5 import PlanarLayout
 
 
-from GeneralLayoutGenerator import split_resonators
-from GeneralLayoutGenerator import generate_line_graph
+from GraphCodes.resonator_utility import split_resonators
+from GraphCodes.resonator_utility import generate_line_graph
 #from GeneralLayoutGenerator import decorate_layout
 
 #########
@@ -308,6 +308,20 @@ saveFolder = r'/Users/kollar2/Documents/HouckLab/EuclideanLatticePlanning/DOSs/'
  
 
 def save_DOS(saveCell, numSurfPoints = 5, res = 0.04, folder = '', split_layout = False):
+    '''
+    save_DOS _summary_
+
+    :param saveCell: _description_
+    :type saveCell: _type_
+    :param numSurfPoints: _description_, defaults to 5
+    :type numSurfPoints: int, optional
+    :param res: _description_, defaults to 0.04
+    :type res: float, optional
+    :param folder: _description_, defaults to ''
+    :type folder: str, optional
+    :param split_layout: _description_, defaults to False
+    :type split_layout: bool, optional
+    '''    
     DOS, FBs, binfreqs, res = compute_DOS(saveCell, numSurfPoints = numSurfPoints, modeType = 'FW', freq_res = res, detectFlatBands = True, split_layout = split_layout)
     saveDict = {}
     saveDict['DOS'] = DOS

@@ -7,7 +7,6 @@ Created on Mon Dec 20 19:27:00 2021
 """
 
 import numpy
-import pylab
 import sys
 import time
 
@@ -21,10 +20,10 @@ if not KollarLabClassPath in sys.path:
 # from GeneralLayoutGenerator import GeneralLayout
 # from GeneralLayoutGenerator import TreeResonators
 
-from EuclideanLayoutGenerator3D import UnitCell3D
-from EuclideanLayoutGenerator3D import EuclideanLayout3D
+from .unit_cell_3D import UnitCell3D
+from .EuclideanLayoutGenerator3D import EuclideanLayout3D
 
-from PauliCode3D import PauliCode3D
+from .PauliCode3D import PauliCode3D
 
 
 cubeCell = UnitCell3D('cubic')

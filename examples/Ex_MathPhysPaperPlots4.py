@@ -1410,6 +1410,16 @@ if HPKoskHWFig:
     
     
     def plot_band_cut_hack(ax, bandCut, colorlist = ''):
+        '''
+        plot_band_cut_hack _summary_
+
+        :param ax: _description_
+        :type ax: _type_
+        :param bandCut: _description_
+        :type bandCut: _type_
+        :param colorlist: _description_, defaults to ''
+        :type colorlist: str, optional
+        '''        
         if colorlist == '':
             colorlist = ['firebrick', 'dodgerblue', 'blueviolet', 'mediumblue',     'cornflowerblue', 'goldenrod', 'mediumblue', 'blueviolet', 'dodgerblue', 'firebrick', 'cornflowerblue', 'goldenrod']
         
@@ -2781,6 +2791,15 @@ else:
 #extra FB states for Mattias
 #####
 def build_double_plaquette_state(layout, maxItter = -1):
+    '''
+    build_double_plaquette_state _summary_
+
+    :param layout: _description_
+    :type layout: _type_
+    :param maxItter: _description_, defaults to -1
+    :type maxItter: int, optional
+    :raises ValueError: _description_
+    '''    
     if maxItter > layout.itter:
             raise ValueError('dont have this many itterations')
     elif maxItter <0:
@@ -2825,6 +2844,14 @@ def build_double_plaquette_state(layout, maxItter = -1):
     return state
 
 def seperate_pm(state):
+    '''
+    seperate_pm _summary_
+
+    :param state: _description_
+    :type state: _type_
+    :return: _description_
+    :rtype: _type_
+    '''    
     plusInds = numpy.where(state>0)[0]
     minusInds = numpy.where(state<0)[0]
     
@@ -3034,7 +3061,14 @@ else:
 #figure infinity: split graphene, split hpg, split thingy
 #######
 def plot_any_band_cut(ax, cut):
-    
+    '''
+    plot_any_band_cut _summary_
+
+    :param ax: _description_
+    :type ax: _type_
+    :param cut: _description_
+    :type cut: _type_
+    '''    
     colorlist = ['firebrick', 'dodgerblue', 'blueviolet', 'mediumblue', 'goldenrod', 'cornflowerblue']
     
     pylab.sca(ax)
@@ -4828,7 +4862,14 @@ else:
 #figure infinity: split graphene, split hpg, split thingy
 #######
 def plot_any_band_cut(ax, cut):
-    
+    '''
+    plot_any_band_cut _summary_
+
+    :param ax: _description_
+    :type ax: _type_
+    :param cut: _description_
+    :type cut: _type_
+    '''    
     colorlist = ['firebrick', 'dodgerblue', 'blueviolet', 'mediumblue', 'goldenrod', 'cornflowerblue']
     
     pylab.sca(ax)

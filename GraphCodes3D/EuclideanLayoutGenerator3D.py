@@ -19,80 +19,58 @@ EuclideanLayout3D Class
     Chose your UnitCell type, wave type, and number of unit cells and make a lattice
      
      Methods:
-        ###########
-        #automated construction, saving, loading
-        ##########
-        populate (autoruns at creation time)
-        save
         
-        ########
-        #functions to generate the resonator lattice
-        #######
-        generateLattice
-        _fix_edge_resonators (already stores some SD properties of fixed edge)
-         
-        #######
-        #resonator lattice get /view functions
-        #######
-        get_xs
-        get_ys
-        rotate_resonators
-        rotate_coords
-        draw_resonator_lattice
-        draw_resonator_end_points
-        get_coords
-        get_cell_offset
-        get_cell_location
-        get_section_cut
+        *automated construction, saving, loading*
+            * populate (autoruns at creation time)
+            * save
+        *functions to generate the resonator lattice*
+            * generateLattice
+            * _fix_edge_resonators (already stores some SD properties of fixed edge)
+        *resonator lattice get /view functions*
+            * get_xs
+            * get_ys
+            * rotate_resonators
+            * rotate_coords
+            * draw_resonator_lattice
+            * draw_resonator_end_points
+            * get_coords
+            * get_cell_offset
+            * get_cell_location
+            * get_section_cut
+        *functions to generate effective JC-Hubbard lattice (semiduals)*
+            * generate_semiduals
+            * _fix_SDedge
         
-        ########
-        #functions to generate effective JC-Hubbard lattice (semiduals)
-        ######## 
-        generate_semiduals
-        #### _fix_SDedge
+        *get and view functions for the JC-Hubbard (semi-dual lattice)*
+            * draw_SD_points
+            * draw_SDlinks
         
-        #######
-        #get and view functions for the JC-Hubbard (semi-dual lattice)
-        #######
-        draw_SD_points
-        draw_SDlinks
+        *Hamiltonian related methods*
         
-        ######
-        #Hamiltonian related methods
-        ######
+        *methods for calculating/looking at states and interactions*
+            * plot_layout_state
         
-        ##########
-        #methods for calculating/looking at states and interactions
-        #########
-        plot_layout_state
-        
-        ##########
-        #methods for calculating things about the root graph
-        #########
-        generate_root_Hamiltonian
+        *methods for calculating things about the root graph*
+            * generate_root_Hamiltonian
         
         
     Sample syntax:
-        #####
-        #loading precalculated layout
-        #####
+        *loading precalculated layout*
         from EuclideanLayoutGenerator3D import EuclideanLayout3D
         testLattice = EuclideanLayout3D(file_path = 'Huse_4x4_FW.pkl')
         
-        #####
-        #making new layout
-        #####
+        
+        *making new layout*
         from EuclideanLayoutGenerator3D import EuclideanLayout3D
         #from built-in cell
         testLattice = EuclideanLayout3D(xcells = 4, ycells = 4, zcells = 4,lattice_type = 'Huse', side = 1, file_path = '', modeType = 'FW')
         
-        #from custom cell
+        from custom cell
         testCell = UnitCell3D(lattice_type = 'name', side = 1, resonators = resonatorMat, a1 = vec1, a2 = vec2, a3 = vec3)
         testLattice = EuclideanLayout3D(xcells = 4, ycells = 4, zcells = 4, modeType = 'FW', resonatorsOnly=False, initialCell = testCell)
         
-        #####
-        #saving computed layout
-        #####
+        
+        *saving computed layout*
         testLattice.save( name = 'filename.pkl') #filename can be a full path, but must have .pkl extension
 """
 
@@ -104,10 +82,16 @@ import numpy as np
 import pickle
 
 from .GeneralLayoutGenerator3D import GeneralLayout3D
-from .UnitCell3D import UnitCell3D
+from .unit_cell_3D import UnitCell3D
        
 
 class EuclideanLayout3D(GeneralLayout3D):
+    '''
+    EuclideanLayout3D _summary_
+
+    :param GeneralLayout3D: _description_
+    :type GeneralLayout3D: _type_
+    '''    
     def __init__(self, xcells = 4, 
                        ycells = 4, 
                        zcells = 4,
@@ -119,10 +103,31 @@ class EuclideanLayout3D(GeneralLayout3D):
                        Hamiltonian = False,
                        initialCell = ''):
         '''
-        
+        __init__ _summary_
+
+        :param xcells: _description_, defaults to 4
+        :type xcells: int, optional
+        :param ycells: _description_, defaults to 4
+        :type ycells: int, optional
+        :param zcells: _description_, defaults to 4
+        :type zcells: int, optional
+        :param lattice_type: _description_, defaults to 'Huse'
+        :type lattice_type: str, optional
+        :param side: _description_, defaults to 1
+        :type side: int, optional
+        :param file_path: _description_, defaults to ''
+        :type file_path: str, optional
+        :param modeType: _description_, defaults to 'FW'
+        :type modeType: str, optional
+        :param resonatorsOnly: _description_, defaults to False
+        :type resonatorsOnly: bool, optional
+        :param Hamiltonian: _description_, defaults to False
+        :type Hamiltonian: bool, optional
+        :param initialCell: _description_, defaults to ''
+        :type initialCell: str, optional
+        :raises ValueError: _description_
         '''
-        
-        
+
         if file_path != '':
             self.load(file_path)
         else:
@@ -153,9 +158,9 @@ class EuclideanLayout3D(GeneralLayout3D):
             self.populate(resonatorsOnly = resonatorsOnly, Hamiltonian  = Hamiltonian)
             
             
-    ###########
+    
     #automated construction, saving, loading
-    ##########
+    
     def populate(self, resonatorsOnly=False, Hamiltonian = True, save = False, save_name = ''):
         '''
         fully populate the structure up to itteration = MaxItter
@@ -197,9 +202,7 @@ class EuclideanLayout3D(GeneralLayout3D):
         pickle.dump(savedict, open(name, 'wb'))
         return
     
-    #######
     #resonator lattice get /view functions
-    #######       
     def get_xs(self):
         '''
         return x coordinates of all the resonator end points
@@ -326,9 +329,7 @@ class EuclideanLayout3D(GeneralLayout3D):
             
         
     
-    #####
     #draw functions
-    ######
     def rotate_resonators(self, resonators, theta, phi):
         '''rotate the coordinates of resonators into a projection view  
         
@@ -466,9 +467,7 @@ class EuclideanLayout3D(GeneralLayout3D):
     
     
     
-    ########
     #functions to generate the resonator lattice
-    #######
     def generate_lattice(self, xsize = -1, ysize = -1, zsize = -1):
         '''
         Hopefully will become a general function to fill out the lattice. Has some issues
@@ -527,9 +526,7 @@ class EuclideanLayout3D(GeneralLayout3D):
         
         
 
-    ########
     #functions to generate effective JC-Hubbard lattice
-    ########
     def generate_semiduals(self):
         '''
         main workhorse function to generate the JC-Hubbard lattice.
@@ -702,9 +699,7 @@ class EuclideanLayout3D(GeneralLayout3D):
                     
         return
 
-    ######
     #Hamiltonian related methods
-    ######
     
     def plot_layout_state(self, state_vect, ax, 
                           theta = np.pi/10,
@@ -891,9 +886,7 @@ if __name__=="__main__":
     
     manualLineGraph = True
     if not manualLineGraph:
-        #####
         #make a line graph cell, the automatic way
-        ####
         cubeLGCell = cubeCell.line_graph_cell()
 
         #draw the cell
@@ -921,9 +914,7 @@ if __name__=="__main__":
     
     
     if manualLineGraph:
-        #####
         #make a line graph cell, manually
-        ####
         
         resonators = np.zeros((15,6))
         dell = 0.5
@@ -984,14 +975,10 @@ if __name__=="__main__":
     
     
     
-    ####
     #next, lets check a Bloch-wave calculation
-    ####
     
     
-    #####
     #testing bloch theory
-    ####
     
     # testCell = cubeCell
     testCell = cubeLGCell
@@ -1047,9 +1034,7 @@ if __name__=="__main__":
     
     
     
-    #######
     #now a Bloch-wave calculation on the root graphs (and a check that we are getting those right)
-    ######
     
     # testCell = cubeCell
     testCell = cubeLGCell
@@ -1104,9 +1089,7 @@ if __name__=="__main__":
     
     
     
-    #####
     #now to try making and displaying an Euclidean lattice
-    #######################
     
     testCell = cubeCell
     size = 3
