@@ -190,6 +190,14 @@ class PlanarLayout(object):
             self.itter = 0
             
             self.radius_method = radius_method
+            if self.radius_method == 'custom':
+                print('   ')
+                print('Warning: ')
+                print('0th radius must be defined at creation time with self.side, otherwise the initial')
+                print('ring and its coordinates are inonsistent between things.')
+                print('All additional radii must be specified before construction by setting ')
+                print('self.radii[1] ...')
+                print('   ')
             
             if not ((modeType == 'FW') or (modeType  == 'HW')):
                 raise ValueError('Invalid mode type. Must be FW or HW')
@@ -554,8 +562,9 @@ class PlanarLayout(object):
             MattiasRadii = [1.0, 3.2, 5.1, 7.,8.]
             self.radii[newItter ] = self.radius*MattiasRadii[newItter]
         if self.radius_method == 'custom':
-            print('Warning: All radii must be specified before construction')
-            #no need to update.
+            # print('Warning: All radii must be specified before construction')
+            # print('0th radius must be defined at creation time with self.side, otherwise the initial')
+            # print('ring isnt right')
             pass
         
         #store the cartesian locations of the new vertices
